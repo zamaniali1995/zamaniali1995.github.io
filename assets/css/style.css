@@ -85,10 +85,11 @@
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  color: #00796b;
+  color: black;
+  background-color: #b2c6c4;
   border: 2px solid #fff;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 1px;
   display: inline-block;
   border-radius: 5px;
@@ -325,7 +326,7 @@ h3 {
 }
 
 #intro.section .container {
-  color: white;
+  color: black;
   font-weight: 200;
   left: 0;
   position: absolute;
@@ -344,7 +345,7 @@ h3 {
   /* font-weight: 400; */
   line-height: 150%;
   /* padding: 0 0px; */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); */
 }
 
 #intro.section .underline {
@@ -560,7 +561,7 @@ small {
 /* .teal */
 
 .teal {
-  background-color: #008073 !important;
+  background-color: #b2c6c4 !important;
 }
 
 /* .teal {
