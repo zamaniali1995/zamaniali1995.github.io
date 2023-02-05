@@ -92,8 +92,8 @@
   font-size: 17px;
   letter-spacing: 1px;
   display: inline-block;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
+  border-radius: 24px;
+  /* -webkit-border-radius: 5px; */
 }
 
 /* .readme:hover{
