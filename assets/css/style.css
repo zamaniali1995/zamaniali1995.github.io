@@ -378,12 +378,13 @@ h3 {
   background-color: rgb(115 215 204);
   background-image: url(../img/backgroud-img-8.png);
   height: 100%;
-  width: 100%; /* Full width of the viewport */
+  background-size: cover; /* Ensures the background image covers the entire element */
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
 }
+
 
 .waves-effect.waves-blue .waves-ripple {
   /* The alpha value allows the text and background color
