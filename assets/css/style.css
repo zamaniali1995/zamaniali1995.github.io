@@ -374,27 +374,15 @@ h3 {
   padding: 0 10px;
 }
 
-/* .overlay {
+.overlay {
   background-color: rgb(115 215 204);
   background-image: url(../img/backgroud-img-8.png);
   height: 100%;
+  width: 100%; /* Full width of the viewport */
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-} */
-
-.overlay {
-  background-color: rgb(115, 215, 204); /* Solid color as fallback */
-  background-image: url(../img/backgroud-img-8.png); /* Background image */
-  background-size: cover; /* Ensures the background image covers the entire element */
-  background-position: center; /* Centers the background image */
-  height: 100vh; /* Full height of the viewport */
-  width: 100%; /* Full width of the viewport */
-  position: fixed; /* Fixed positioning relative to the viewport */
-  top: 0;
-  left: 0;
-  z-index: -1; /* Optional: Sets the z-index to send the overlay behind other content */
 }
 
 .waves-effect.waves-blue .waves-ripple {
