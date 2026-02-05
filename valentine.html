@@ -121,6 +121,27 @@
             margin-bottom: 20px;
         }
 
+        .couple-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f5576c;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            margin: 20px auto;
+            display: block;
+            animation: photoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes photoFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         @keyframes heartbeat {
             0%, 100% {
                 transform: scale(1);
@@ -543,6 +564,12 @@
                 font-size: 1em;
                 padding: 15px;
             }
+
+            .couple-photo {
+                width: 180px;
+                height: 180px;
+                border-width: 4px;
+            }
         }
     </style>
 </head>
@@ -558,6 +585,7 @@
         <div id="questionSection">
             <div class="main-heart">💝</div>
             <h1 data-en="Hey Beautiful!" data-fa="سلام عزیز دلم،">سلام عزیز دلم،</h1>
+            <img src="assets/img/us-2.png" alt="Us" class="couple-photo">
             <p class="question" data-en="You light up my world in ways I never imagined possible. Every moment with you is a treasure, and I can't imagine celebrating this Valentine's Day with anyone else." data-fa="نمی‌دونی حضورت چطور دنیای منو روشن کرده؛ طوری که حتی توی رویا‌هام هم تصورش رو نمی‌کردم. با تو، هر لحظه پر از معنا و زیباییه و کنار تو بودن، خودِ آرامشه. هیچ‌جوره نمی‌تونم این روز ولنتاین رو بدون تو تصور کنم…">
                 نمی‌دونی حضورت چقدر دنیای منو روشن کرده؛ طوری که حتی توی رویا‌هام هم تصورش نمی‌کردم. با تو، هر لحظه پر از معنا و زیباییه و کنار تو بودن، خودِ آرامشه. هیچ‌جوره نمی‌تونم ولنتاین رو بدون تو تصور کنم…
             </p>
