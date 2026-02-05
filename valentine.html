@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ولنتاین من می‌شی؟ 💝</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .hearts-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: float 15s infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #d946ef 0%, #e04556 100%);
+        }
+
+        .container {
+            scrollbar-width: thin;
+            scrollbar-color: #f5576c rgba(255, 255, 255, 0.3);
+        }
+
+        .main-heart {
+            font-size: 80px;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(1.1);
+            }
+            20%, 40% {
+                transform: scale(0.95);
+            }
+        }
+
+        h1 {
+            color: #d946ef;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 1.4em;
+            color: #4a4a4a;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .buttons-container {
+            position: relative;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 18px 50px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #yesBtn {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        #noBtn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: absolute;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .success-container {
+            animation: fadeIn 1s ease-in;
+        }
+
+        .celebration {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: rotate 2s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            0%, 100% {
+                transform: rotate(-10deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .success-message {
+            font-size: 2em;
+            color: #d946ef;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .romantic-ideas {
+            text-align: left;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .romantic-ideas h2 {
+            color: #d946ef;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .idea {
+            padding: 15px;
+            margin: 15px 0;
+            background: white;
+            border-radius: 15px;
+            border-left: 5px solid #f5576c;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .idea:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .idea.selected {
+            background: linear-gradient(135deg, #fff0f7 0%, #ffe8f0 100%);
+            border-left-color: #d946ef;
+        }
+
+        .idea-checkbox {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: #f5576c;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .idea-content {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .idea-text {
+            flex: 1;
+        }
+
+        .idea-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .idea-title {
+            color: #d946ef;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .idea-description {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .send-selection-btn {
+            margin-top: 30px;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            display: block;
+        }
+
+        .send-selection-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(245, 87, 108, 0.4);
+        }
+
+        .send-selection-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .send-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        .send-feedback.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .send-feedback.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+
+        .final-message {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5576c 0%, #d946ef 100%);
+            color: white;
+            border-radius: 15px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 1em;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        #langIcon {
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        .language-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        html[dir="rtl"] .container {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+
+        html[dir="rtl"] .idea {
+            border-left: none;
+            border-right: 5px solid #f5576c;
+            text-align: right;
+        }
+
+        html[dir="rtl"] .idea:hover {
+            transform: translateX(-10px);
+        }
+
+        html[dir="rtl"] .idea-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        html[dir="rtl"] .idea-title {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .idea-description {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .romantic-ideas {
+            text-align: right;
+        }
+
+        html[dir="rtl"] h1,
+        html[dir="rtl"] h2,
+        html[dir="rtl"] .question,
+        html[dir="rtl"] .success-message,
+        html[dir="rtl"] .final-message {
+            text-align: right;
+        }
+
+        html[dir="rtl"] .buttons-container {
+            direction: ltr;
+        }
+
+        html[lang="fa"] body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html[lang="fa"] h1,
+        html[lang="fa"] h2 {
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 40px 30px;
+                max-height: 85vh;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .question {
+                font-size: 1.2em;
+            }
+
+            button {
+                padding: 15px 35px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="language-toggle" id="langToggle">
+        <span id="langIcon">🇺🇸</span>
+        <span id="langText">English</span>
+    </button>
+
+    <div class="hearts-background" id="heartsContainer"></div>
+
+    <div class="container">
+        <div id="questionSection">
+            <div class="main-heart">💝</div>
+            <h1 data-en="Hey Beautiful!" data-fa="سلام عزیز دلم،">سلام عزیز دلم،</h1>
+            <p class="question" data-en="You light up my world in ways I never imagined possible. Every moment with you is a treasure, and I can't imagine celebrating this Valentine's Day with anyone else." data-fa="نمی‌دونی حضورت چطور دنیای منو روشن کرده؛ طوری که حتی توی رویا‌هام هم تصورش رو نمی‌کردم. با تو، هر لحظه پر از معنا و زیباییه و کنار تو بودن، خودِ آرامشه. هیچ‌جوره نمی‌تونم این روز ولنتاین رو بدون تو تصور کنم…">
+                نمی‌دونی حضورت چقدر دنیای منو روشن کرده؛ طوری که حتی توی رویا‌هام هم تصورش نمی‌کردم. با تو، هر لحظه پر از معنا و زیباییه و کنار تو بودن، خودِ آرامشه. هیچ‌جوره نمی‌تونم ولنتاین رو بدون تو تصور کنم…
+            </p>
+            <p class="question" style="font-size: 1.6em; font-weight: bold; color: #d946ef;" data-en="Will you be my Valentine? 💕" data-fa="ولنتاین من می‌شی؟ 💕✨">
+                ولنتاین من می‌شی؟ 💕✨
+            </p>
+            <div class="buttons-container">
+                <button id="yesBtn" data-en="Yes! 💖" data-fa="بله! 💖">بله! 💖</button>
+                <button id="noBtn" data-en="No" data-fa="نه">نه</button>
+            </div>
+        </div>
+
+        <div id="successSection" class="hidden">
+            <div class="success-container">
+                <div class="celebration">🎉 💕 🎊</div>
+                <div class="success-message" data-en="Yay! You made my day! 💝" data-fa="اووف! روزم رو ساختی! 💝">اووف! روزم رو ساختی! 💝</div>
+                <p style="font-size: 1.2em; color: #666; margin-bottom: 20px;" data-en="I promise to make this Valentine's Day unforgettable for us!" data-fa="قول میدم این روز ولنتاین رو برای ما فراموش‌نشدنی کنم!">
+                    قول می‌دم این ولنتاین پر از عشق و لحظه‌های قشنگ باشه                </p>
+
+                <div class="romantic-ideas">
+                    <h2 data-en="✨ Our Romantic Valentine's Ideas ✨" data-fa="✨ ایده‌های رمانتیک ولنتاین✨">✨ ایده‌های رمانتیک ولنتاین ✨</h2>
+                    <p style="margin-bottom: 20px; color: #666; font-size: 1.1em;" data-en="Select your favorite ideas and I'll get an email with your choices! 💕" data-fa="ایده‌های مورد علاقت رو انتخاب کن تا بهم ایمیل بشه! 💕">ایده‌های مورد علاقت رو انتخاب کن تا بهم ایمیل بشه! 💕</p>
+
+                    <div class="idea" data-idea-en="Romantic Candlelight Dinner at Home" data-idea-fa="شام رمانتیکِ خونگی با نور شمع">
+                        <input type="checkbox" class="idea-checkbox" id="idea1">
+                        <div class="idea-icon">🕯️</div>
+                        <div class="idea-title" data-en="Romantic Candlelight Dinner at Home" data-fa="شام رمانتیک شمع‌سوز خونگی">شام رمانتیکِ خونگی با نور شمع</div>
+                        <div class="idea-description" data-en="I'll transform our dining space into a romantic paradise with candles, fairy lights, and your favorite music playing softly. We can enjoy a delicious homemade meal or order from your favorite restaurant, staying warm and cozy inside while creating our own intimate atmosphere." data-fa="                            فضای خونه رو با نور شمع چراغ و موسیقی مورد علاقه به ی فضای رومانتیک تبدیل می کنیم. و ی غذای مشتی خونگی خوشمزه یا از رستوران مورد علاقت سفارش بدیم و عشق و صفا و از وجود هم لذت ببریم ">
+                            فضای خونه رو با نور شمع چراغ و موسیقی مورد علاقه به ی فضای رومانتیک تبدیل می کنیم. و ی غذای مشتی خونگی خوشمزه یا از رستوران مورد علاقت سفارش بدیم و عشق و صفا و از وجود هم لذت ببریم
+                        </div>
+                    </div>
+
+                    <div class="idea" data-idea-en="Movie Marathon with Surprise Treats" data-idea-fa="فیلم با تنقلات سورپرایزی">
+                        <input type="checkbox" class="idea-checkbox" id="idea2">
+                        <div class="idea-icon">🎬</div>
+                        <div class="idea-title" data-en="Movie Marathon with Surprise Treats" data-fa="فیلم با تنقلات سورپرایزی">فیلم با تنقلات سورپرایزی</div>
+                        <div class="idea-description" data-en="Let's create our own cinema at home! I'll set up blankets, pillows, and prepare a basket full of your favorite snacks, chocolates, and drinks. We'll watch romantic movies or your favorite series, pausing for spontaneous kisses and cuddles." data-fa="ی سینما تو خونه درست می کنیم با پتو و بالشت و ی سبد تنقلات و نوشیدنی و ی فیلم با حال و بوس و بغل لا به لای فیلم">
+                            ی سینما تو خونه درست می کنیم با پتو و بالشت و ی سبد تنقلات و نوشیدنی و ی فیلم با حال و بوس و بغل لا به لای فیلم
+                        </div>
+                    </div>
+
+                    <div class="idea" data-idea-en="Creative Couples Activity" data-idea-fa="فعالیت خلاقانه با هم">
+                        <input type="checkbox" class="idea-checkbox" id="idea3">
+                        <div class="idea-icon">🎨</div>
+                        <div class="idea-title" data-en="Creative Couples Activity" data-fa="فعالیت خلاقانه با هم">فعالیت خلاقانه با هم</div>
+                        <div class="idea-description" data-en="Let's paint together! I'll set up canvases and paints, and we can create portraits of each other or paint what love means to us. No artistic skills required - just fun, laughter, and creating memories. We'll keep these as souvenirs of our special day." data-fa="بیا با هم نقاشی کنیم می تونیم بوم و رنگ بگیریم قبلش. پرتره همو می تونیم بکشیم به شکل خنده دار و عاشقانه  و یادگاری نگه داریم">
+                            بیا با هم نقاشی کنیم می تونیم بوم و رنگ بگیریم قبلش. پرتره همو می تونیم بکشیم به شکل خنده دار و عاشقانه  و یادگاری نگه داریم
+                        </div>
+                    </div>
+
+                    <div class="idea" data-idea-en="Love Letter Exchange & Memory Lane" data-idea-fa="تبادل نامه‌های عاشقانه و مرور خاطرات">
+                        <input type="checkbox" class="idea-checkbox" id="idea4">
+                        <div class="idea-icon">💌</div>
+                        <div class="idea-title" data-en="Love Letter Exchange & Memory Lane" data-fa="تبادل نامه‌های عاشقانه و مرور خاطرات">تبادل نامه‌های عاشقانه و مرور خاطرات</div>
+                        <div class="idea-description" data-en="We'll each write heartfelt letters to one another, sharing our favorite memories, what we love most about each other, and our hopes for the future. Then we'll look through photos and videos from our time together, laughing and reminiscing about our beautiful journey." data-fa="هر کردوممون ی نامه برای هم می نویسیم و ی خاطره آیی که دوس داریم رو می نویسم و امیدهای آینده مون رو می نویسیم و نامه‌رو عاشقانه نقاشی می کنیم. بعدش می تونیم عکس و ویدیو هامون رو مرور کنیم و بخندیم و لذت ببریم">
+                            هر کردوممون ی نامه برای هم می نویسیم و ی خاطره آیی که دوس داریم رو می نویسم و امیدهای آینده مون رو می نویسیم و نامه‌رو عاشقانه نقاشی می کنیم. بعدش می تونیم عکس و ویدیو هامون رو مرور کنیم و بخندیم و لذت ببریم
+                        </div>
+                    </div>
+
+                    <div class="idea" data-idea-en="Baking & Cooking Together" data-idea-fa="پخت و پز با هم">
+                        <input type="checkbox" class="idea-checkbox" id="idea5">
+                        <div class="idea-icon">🍰</div>
+                        <div class="idea-title" data-en="Baking & Cooking Together" data-fa="پخت و پز با هم">پخت و پز با هم</div>
+                        <div class="idea-description" data-en="Let's bake heart-shaped cookies, a cake, or make homemade chocolates together! We'll decorate them with icing, sprinkles, and lots of love. Even if they turn out wonky, they'll be perfect because we made them together. Plus, we get to lick the spoons!" data-fa="ببیا با هم کیک قلبی درست کنیم و تزئینش کنیم و بعد با چایی بخوریم">
+                            ببیا با هم کیک قلبی درست کنیم و تزئینش کنیم و بعد با چایی بخوریم
+                        </div>
+                    </div>
+
+                    <div class="idea" data-idea-en="Dance Under the Moonlight" data-idea-fa="رقص زیر نور ماه">
+                        <input type="checkbox" class="idea-checkbox" id="idea6">
+                        <div class="idea-icon">🎵</div>
+                        <div class="idea-title" data-en="Dance Under the Moonlight" data-fa="رقص زیر نور ماه">رقص زیر نور ماه</div>
+                        <div class="idea-description" data-en="I'll create a playlist of our favorite songs and slow romantic melodies. We'll dance in the living room, on the balcony, or wherever feels right - no fancy moves needed, just you and me swaying to the music, holding each other close." data-fa="ی پلی لیست از آهنگایی که دوس داریم درست می کنیم و با هم کاریوکی می کنیم و می خونیم و می رقصیم و بغل کردن لا به لاش">
+                            ی پلی لیست از آهنگایی که دوس داریم درست می کنیم و با هم کاریوکی می کنیم و می خونیم و می رقصیم و بغل کردن لا به لاش
+                        </div>
+                    </div>
+
+                    <button class="send-selection-btn" id="sendBtn" data-en="Send My Choices 💌" data-fa="بفرس بیاد خشکله دختر">بفرس بیاد خشکله دختر</button>
+                    <div class="send-feedback" id="sendFeedback"></div>
+
+                </div>
+
+                <div class="final-message">
+                    <strong data-en="No matter what we choose to do, just being with you is the greatest gift." data-fa="مهم نیس کدومش رو انتخاب کنی عزیزم مهم اینه کنار هم باشیم حتی هیچ کاری نکنیم">مهم نیس کدومش رو انتخاب کنی عزیزم مهم اینه کنار هم باشیم حتی هیچ کاری نکنیم</strong>
+                    <br><br>
+                    <span data-en="You make every ordinary moment extraordinary, and I'm so grateful to have you as my Valentine. Here's to our love, our laughter, and all the beautiful moments we'll create together! 💕" data-fa="بدون تو هر لحظه معمولی رو فوق العاده می کنی و خیلی خوش حالم دارمت. خنده ها و عشق و محبتی که به هم داریم مقدسه برام.">
+                        بدون تو هر لحظه معمولی رو فوق العاده می کنی و خیلی خوش حالم دارمت. خنده ها و عشق و محبتی که به هم داریم مقدسه برام.
+                    </span>
+                    <br><br>
+                    <span data-en="I love you more than words can express. ❤️" data-fa="دوست دارم بیشتر از اونی که کلمات بتونن منتقل کنن">دوست دارم بیشتر از اونی که کلمات بتونن منتقل کنن❤️</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language toggle functionality
+        let currentLang = 'fa';
+        const html = document.documentElement;
+        const langToggle = document.getElementById('langToggle');
+        const langIcon = document.getElementById('langIcon');
+        const langText = document.getElementById('langText');
+
+        function switchLanguage() {
+            currentLang = currentLang === 'en' ? 'fa' : 'en';
+            
+            // Update HTML dir and lang attributes
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'fa' ? 'rtl' : 'ltr');
+            
+            // Update toggle button
+            if (currentLang === 'fa') {
+                langIcon.textContent = '🇺🇸';
+                langText.textContent = 'English';
+            } else {
+                langIcon.textContent = '🦁☀️';
+                langText.textContent = 'فارسی';
+            }
+            
+            // Update all elements with data-en and data-fa attributes
+            const elements = document.querySelectorAll('[data-en][data-fa]');
+            elements.forEach(element => {
+                const text = currentLang === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-fa');
+                element.textContent = text;
+            });
+            
+            // Update page title
+            document.title = currentLang === 'en' ? 
+                'Will You Be My Valentine? 💝' : 
+                'ولنتاین من می‌شی؟ 💝';
+        }
+
+        langToggle.addEventListener('click', switchLanguage);
+
+        // Create floating hearts
+        function createHeart() {
+            const heartsContainer = document.getElementById('heartsContainer');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['💖', '💕', '💗', '💝', '💘'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }
+
+        // Create hearts continuously
+        setInterval(createHeart, 300);
+
+        // No button movement logic
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const container = document.querySelector('.buttons-container');
+
+        function moveNoButton() {
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            
+            const maxX = containerRect.width - btnRect.width;
+            const maxY = containerRect.height - btnRect.height;
+            
+            let newX = Math.random() * maxX;
+            let newY = Math.random() * maxY;
+            
+            // Ensure it doesn't overlap with Yes button
+            const yesBtnRect = yesBtn.getBoundingClientRect();
+            const yesX = yesBtnRect.left - containerRect.left;
+            const yesY = yesBtnRect.top - containerRect.top;
+            
+            // If too close to Yes button, move it further away
+            if (Math.abs(newX - yesX) < 200 && Math.abs(newY - yesY) < 100) {
+                newX = newX < maxX / 2 ? maxX : 0;
+            }
+            
+            noBtn.style.left = newX + 'px';
+            noBtn.style.top = newY + 'px';
+        }
+
+        // Move button on hover
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        
+        // Move button on touch (mobile)
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        // Attempt to click (still moves)
+        noBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        // Make No button initially positioned
+        noBtn.style.position = 'absolute';
+        noBtn.style.left = '60%';
+        noBtn.style.top = '50%';
+        noBtn.style.transform = 'translate(-50%, -50%)';
+
+        // Yes button click handler
+        yesBtn.addEventListener('click', () => {
+            document.getElementById('questionSection').classList.add('hidden');
+            document.getElementById('successSection').classList.remove('hidden');
+            
+            // Scroll to top of container
+            document.querySelector('.container').scrollTop = 0;
+            
+            // Create a burst of hearts
+            for (let i = 0; i < 50; i++) {
+                setTimeout(createHeart, i * 50);
+            }
+        });
+
+        // Initialize with some hearts
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+
+        // Handle checkbox selection highlighting
+        const checkboxes = document.querySelectorAll('.idea-checkbox');
+        const ideas = document.querySelectorAll('.idea');
+        
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    ideas[index].classList.add('selected');
+                } else {
+                    ideas[index].classList.remove('selected');
+                }
+            });
+        });
+
+        // Handle send button click
+        const sendBtn = document.getElementById('sendBtn');
+        const sendFeedback = document.getElementById('sendFeedback');
+
+        sendBtn.addEventListener('click', function() {
+            const selectedIdeas = [];
+            const checkedBoxes = document.querySelectorAll('.idea-checkbox:checked');
+            
+            if (checkedBoxes.length === 0) {
+                sendFeedback.textContent = currentLang === 'en' ? 
+                    '⚠️ Please select at least one idea!' : 
+                    '⚠️ لطفاً حداقل یک ایده انتخاب کن!';
+                sendFeedback.className = 'send-feedback error show';
+                setTimeout(() => {
+                    sendFeedback.className = 'send-feedback';
+                }, 3000);
+                return;
+            }
+
+            checkedBoxes.forEach((checkbox) => {
+                const ideaElement = checkbox.closest('.idea');
+                const ideaName = currentLang === 'en' ? 
+                    ideaElement.getAttribute('data-idea-en') : 
+                    ideaElement.getAttribute('data-idea-fa');
+                selectedIdeas.push(ideaName);
+            });
+
+            // Create email body
+            const subject = "💝 Valentine's Day Ideas Selection";
+            const body = currentLang === 'en' ? 
+                `Your Valentine has selected ${selectedIdeas.length} idea(s) for your special day together! 💕%0D%0A%0D%0ASelected Ideas:%0D%0A${selectedIdeas.map((idea, i) => `${i + 1}. ${idea}`).join('%0D%0A')}%0D%0A%0D%0ASent with love 💖` :
+                `ولنتاین شما ${selectedIdeas.length} ایده برای روز خاصتون انتخاب کرد! 💕%0D%0A%0D%0Aایده‌های انتخاب شده:%0D%0A${selectedIdeas.map((idea, i) => `${i + 1}. ${idea}`).join('%0D%0A')}%0D%0A%0D%0Aبا عشق فرستاده شد 💖`;
+
+            // Open email client
+            window.location.href = `mailto:zamaniali1995@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            // Show success message
+            sendFeedback.textContent = currentLang === 'en' ? 
+                '✨ Opening your email app! Send the email to let him know your choices 💕' : 
+                'ایمیل باید باز بشه. بفرس بیاد 💕';
+            sendFeedback.className = 'send-feedback success show';
+
+            setTimeout(() => {
+                sendFeedback.className = 'send-feedback';
+            }, 8000);
+        });
+    </script>
+</body>
+</html>
