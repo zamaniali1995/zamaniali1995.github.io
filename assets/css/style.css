@@ -314,11 +314,57 @@ ul {
   font-weight: 600;
 }
 
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.hero-location i {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
 .hero-bio {
+  position: relative;
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  max-width: 520px;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  max-width: 540px;
   margin-bottom: 32px;
+  padding-left: 20px;
+}
+
+.hero-bio::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--gradient);
+}
+
+.hero-bio-lead {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.hero-highlight {
+  font-weight: 600;
+  color: var(--text-primary);
+  background: linear-gradient(120deg, var(--accent) 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-actions {
@@ -641,6 +687,17 @@ ul {
   line-height: 1.2;
 }
 
+.company-logo-text--loblaw {
+  background: linear-gradient(135deg, #ff6900, #fcb900);
+}
+
+.company-logo--altaml {
+  background: #0a0a0a;
+  padding: 4px;
+  object-fit: contain;
+  border: 1px solid rgba(29, 184, 168, 0.25);
+}
+
 .experience-meta h3 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -689,6 +746,39 @@ ul {
 }
 
 .experience-card li b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.initiative-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.initiative-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+
+.initiative-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.initiative-item p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.initiative-item p b {
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -754,12 +844,16 @@ ul {
   height: 180px;
   overflow: hidden;
   position: relative;
+  background: var(--bg-secondary);
 }
 
 .project-image img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 180px;
+  min-height: 180px;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
 }
 
@@ -771,7 +865,8 @@ ul {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--bg-card), transparent 60%);
+  background: linear-gradient(to top, rgba(26, 34, 52, 0.5), transparent 45%);
+  pointer-events: none;
 }
 
 .project-body {
@@ -948,6 +1043,150 @@ ul {
   font-weight: 500;
 }
 
+.education-date {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.education-supervisor {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Publications
+   ========================================================================== */
+
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.publication-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.publication-card:hover {
+  border-color: var(--border-hover);
+  transform: translateX(4px);
+}
+
+.publication-year {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.publication-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.publication-authors {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.publication-venue {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.publication-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.publication-link:hover {
+  color: var(--accent-dark);
+}
+
+/* ==========================================================================
+   Project image placeholders
+   ========================================================================== */
+
+.project-image--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.project-image--google {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.project-image--chatbot {
+  background: linear-gradient(135deg, #818cf8, #c084fc);
+}
+
+.project-image--forecast {
+  background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+}
+
+.project-image--spotify {
+  background: linear-gradient(135deg, #1db954, #191414);
+}
+
+.project-image--loblaw {
+  background: linear-gradient(135deg, #ff6900, #fcb900);
+}
+
+.projects-group-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.projects-group-title + .projects-grid {
+  margin-bottom: 48px;
+}
+
+.experience-affiliation {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.experience-meta h3 .experience-affiliation {
+  display: inline;
+  margin-left: 4px;
+}
+
+.link-icon {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.link-icon:hover {
+  color: var(--accent);
+}
+
 /* ==========================================================================
    Contact
    ========================================================================== */
@@ -963,9 +1202,9 @@ ul {
 
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
