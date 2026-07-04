@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-label="AltaML">
+  <rect width="56" height="56" rx="12" fill="#0a0a0a"/>
+  <circle cx="18" cy="28" r="11" fill="#1db8a8"/>
+  <path d="M18 20.5 L23.5 32.5 L21.5 32.5 L20.2 29.2 L15.8 29.2 L14.5 32.5 L12.5 32.5 Z M16.2 27.4 L19.8 27.4 L18 23.2 Z" fill="#ffffff"/>
+  <text x="34" y="31" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="600">AltaML</text>
+</svg>
