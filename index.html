@@ -1,1295 +1,665 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8Z9M5G3TY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-W8Z9M5G3TY');
   </script>
 
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Materialize - Compiled and minified CSS-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Custom Styles-->
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <title>Ali Zamani | Data Scientist & Machine Learning Engineer</title>
+  <title>Ali Zamani | Senior ML Engineer & Data Scientist</title>
+  <meta name="description" content="Ali Zamani — Senior Machine Learning Engineer & Data Scientist with 4+ years building production ML, GenAI, and MLOps systems at Loblaw Digital, Priceline, and AltaML." />
+  <meta name="keywords" content="Machine Learning Engineer, Data Scientist, Python, AI, MLOps, GenAI, NLP, GCP, Azure" />
+  <meta name="author" content="Ali Zamani" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph-->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ali Zamani | Data Scientist & Machine Learning Engineer" />
-  <meta property="og:description" content="Senior Machine Learning Engineer & Data Scientist with 4+ years experience in Python, ML, AI, and cloud technologies. Currently at Loblaw Digital." />
+  <meta property="og:title" content="Ali Zamani | Senior ML Engineer & Data Scientist" />
+  <meta property="og:description" content="Senior ML Engineer building production AI systems — NLP, GenAI, MLOps, and recommendation systems." />
   <meta property="og:url" content="https://zamaniali1995.github.io/" />
-  <meta property="og:site_name" content="Ali Zamani | Data Scientist & ML Engineer" />
-  <meta property="article:publisher" content="https://zamaniali1995.github.io/" />
-  <meta property="og:image" content="https://zamaniali1995.github.io/examples/preview.png" />
-  <!-- Twitter -->
+  <meta property="og:site_name" content="Ali Zamani Portfolio" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@a1i_zmn_" />
-  <meta name="twitter:title" content="Ali Zamani | Data Scientist & ML Engineer" />
-  <meta name="twitter:description" content="Senior Machine Learning Engineer & Data Scientist specializing in NLP, GenAI, Computer Vision, and MLOps" />
-  <meta name="twitter:url" content="https://twitter.com/a1i_zmn_" />
-  <meta name="author" content="Ali Zamani" />
-  <meta name="description" content="Ali Zamani - Senior Machine Learning Engineer & Data Scientist with 4+ years experience in Python, ML, AI, and cloud technologies. Currently at Loblaw Digital." />
-  <meta name="keywords" content="Machine Learning Engineer, Data Scientist, Python, AI, ML, Tensorflow, GCP, Azure, NLP, Computer Vision" />
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
+  <meta name="twitter:title" content="Ali Zamani | Senior ML Engineer & Data Scientist" />
+  <meta name="twitter:description" content="Senior ML Engineer specializing in NLP, GenAI, Computer Vision, and MLOps." />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="/assets/img/favicon/manifest.json" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="robots" content="index, follow" />
-  <!-- Google Site Verification for indexing -->
-  <!-- <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" /> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
+  <meta name="theme-color" content="#0a0e17" />
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-W8Z9M5G3TY"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  
-  <!-- Navigation Menu-->
-  <!-- Nav class 1 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
 
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/assets/img/ali-zamani-pic.jpeg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
+  <div class="bg-mesh" aria-hidden="true"></div>
 
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-
-      <li class="bold">
-        <!-- mdi-av-web small
-             mdi-av-my-library-books small-->
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-
-      <li class="bold">
-        <!--
-        ICONS:
-        mdi-action-assessment
-        mdi-social-poll
-        mdi-av-equalizer
-        -->
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      
-      <li class="bold">
-        <!--
-        ICONS:
-        -->
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-
-      <li class="bold">
-        <!-- 
-        1. mdi-communication-contacts
-        2. mdi-content-mail
-        3. mdi-communication-email
-        -->
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-
-      <li class="bold">
-        <!--
-        ICONS:
-        1. mdi-action-description
-        2. mdi-file-folder
-        3. mdi-file-folder-open
-        4. mdi-file-attachment
-        5. mdi-file-folder-shared
-        -->
-        <!-- <a aria-label="Open Ali's resume in a new tab" href="#resume" target="_blank"
-          onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
-        <a aria-label="Open Ali's resume in a new tab" href="https://zamaniali1995.github.io/assets/resume/AliZamaniCV.pdf" target="_blank"
-        class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
-      </li>
-
-    </ul>
-  </nav>
-
-  <!-- Nav class 2 -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Ali
-        Zamani</a><span class="black-text">Data Scientist & ML Engineer</span>
+  <!-- Navigation -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="#intro" class="nav-logo" aria-label="Ali Zamani — Home">
+        <img src="/assets/img/ali-zamani-pic.jpeg" alt="Ali Zamani" width="40" height="40" />
+        <span>Ali Zamani</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about" data-section="about">About</a>
+        <a href="#experience" data-section="experience">Experience</a>
+        <a href="#projects" data-section="projects">Projects</a>
+        <a href="#skills" data-section="skills">Skills</a>
+        <a href="#education" data-section="education">Education</a>
+        <a href="#contact" data-section="contact">Contact</a>
+        <a href="/assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-  </nav>
+    <nav class="mobile-menu" aria-label="Mobile navigation">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="/assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </header>
 
-  <!-- Nav class 3 -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Ali's Resume in a new tab"
-          href="/assets/resume/AliZamaniCV.pdf" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Main Content-->
   <main>
-    <!-- First Section: Heading lines and image -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay">
-        <video autoplay muted loop id="background-video">
-          <source src="./assets/video/blue_ink.mp4" type="video/mp4">
-        </video>
-      </div>
+
+    <!-- Hero -->
+    <section id="intro" class="hero">
       <div class="container">
-        <div class="row">
-          <div class="col s12 l8 offset-l2">
-            <div class="hero-content" style="text-align: center; padding: 2rem 0;">
-              <div class="hero-text">
-                <h2 class="hero-title">Hi, I'm <span class="teal">Ali Zamani</span></h2>
-                <h4 class="hero-subtitle">A passionate <span class="typing"></span></h4>
-                <h5 class="hero-description">Self-driven, quick starter, passionate Data Scientist & ML Engineer with a curious mind who enjoys solving complex and challenging real-world problems with cutting-edge AI technologies.</h5>
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name"><span class="gradient-text">Ali Zamani</span></h1>
+            <p class="hero-role">A <span class="typing"></span></p>
+            <p class="hero-bio">
+              Senior ML Engineer at Loblaw Digital with 4+ years building production AI systems —
+              from GenAI frameworks and recommendation engines to MLOps pipelines that serve millions.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fas fa-code"></i> View Projects
+              </a>
+              <a href="/assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+                <i class="fas fa-download"></i> Download Resume
+              </a>
+            </div>
+            <div class="hero-social">
+              <a href="https://linkedin.com/in/zamaniali1995" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/zamaniali1995" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="mailto:zamaniali1995@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-card">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Years Experience</div>
               </div>
-              
-              <div class="social">
-                <a href="http://linkedin.com/in/zamaniali1995" target="_blank" aria-label="LinkedIn Profile">
-                  <button class="icon-btn linkedin">
-                    <i class="fab fa-linkedin-in"></i>
-                  </button>
+              <div class="stat-card">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Projects Shipped</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Degrees</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-wrap">
+              <img src="/assets/img/ali-zamani-pic.jpeg" alt="Ali Zamani — ML Engineer" width="340" height="340" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="section-label fade-in">About Me</p>
+        <h2 class="section-title fade-in">Building AI that works in the real world</h2>
+        <p class="section-subtitle fade-in">
+          Computer Science graduate from the University of Alberta, now leading ML initiatives at Canada's largest retailer.
+        </p>
+        <div class="about-grid">
+          <div class="about-text fade-in">
+            <p>
+              I'm a <strong>Senior Machine Learning Engineer</strong> at Loblaw Digital, where I design and deploy
+              production ML systems that drive data-informed decisions across retail operations.
+            </p>
+            <p>
+              Previously at <strong>Priceline</strong>, I built GenAI frameworks, time-series forecasting pipelines on
+              Vertex AI, and NLP solutions that delivered a <strong>30% conversion uplift</strong> through A/B testing.
+              My work spans the full ML lifecycle — from research and prototyping to MLOps, monitoring, and scale.
+            </p>
+            <p>
+              I hold an M.Sc. in Computer Science from the University of Alberta and am passionate about
+              solving complex problems with Python, cloud platforms, and cutting-edge AI.
+            </p>
+          </div>
+          <div class="about-highlights fade-in">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-brain"></i></div>
+              <div>
+                <h4>GenAI & NLP</h4>
+                <p>LangChain, Hugging Face, LLM-as-a-Judge, RAG pipelines, and transformer models.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-cloud"></i></div>
+              <div>
+                <h4>Cloud & MLOps</h4>
+                <p>Vertex AI, Azure ML, Airflow, MLflow, Docker, Kubernetes — end-to-end pipelines.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-chart-line"></i></div>
+              <div>
+                <h4>Production Impact</h4>
+                <p>Recommendation systems, forecasting, and analytics serving millions of users.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-users"></i></div>
+              <div>
+                <h4>Leadership</h4>
+                <p>Cross-functional collaboration, mentoring, and translating business needs into ML solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <p class="section-label fade-in">Career</p>
+        <h2 class="section-title fade-in">Professional Experience</h2>
+        <p class="section-subtitle fade-in">
+          A track record of shipping ML systems from prototype to production.
+        </p>
+
+        <div class="timeline">
+
+          <!-- Loblaw Digital -->
+          <div class="timeline-item">
+            <article class="experience-card">
+              <div class="experience-header">
+                <div class="company-logo-text" style="background: linear-gradient(135deg, #ff6900, #fcb900);">Loblaw Digital</div>
+                <div class="experience-meta">
+                  <h3><a href="https://www.loblawdigital.co/" target="_blank" rel="noopener">Loblaw Digital</a></h3>
+                  <p class="experience-role">Senior Machine Learning Engineer</p>
+                  <p class="experience-date">Present · Canada</p>
+                </div>
+              </div>
+              <ul>
+                <li>Leading development of <b>machine learning solutions</b> for Canada's largest retailer, driving data-driven decision making across multiple business units.</li>
+                <li>Designing and implementing <b>MLOps pipelines</b> for scalable model deployment and monitoring in production environments.</li>
+                <li>Building <b>recommendation systems</b> and <b>predictive analytics</b> to enhance customer experience and optimize operations.</li>
+                <li>Collaborating with cross-functional teams to translate business requirements into technical ML solutions.</li>
+              </ul>
+              <p class="experience-tools"><b>Tools:</b> Python, ML Pipeline, Cloud Platforms, Data Science, Leadership</p>
+            </article>
+          </div>
+
+          <!-- Priceline -->
+          <div class="timeline-item">
+            <article class="experience-card">
+              <div class="experience-header">
+                <img src="/assets/img/priceline.webp" alt="Priceline" class="company-logo" width="56" height="56" />
+                <div class="experience-meta">
+                  <h3><a href="https://priceline.com/" target="_blank" rel="noopener">Priceline</a></h3>
+                  <p class="experience-role">Machine Learning Engineer</p>
+                  <p class="experience-date">Mar 2023 – 2024 · Toronto, ON</p>
+                </div>
+              </div>
+              <ul>
+                <li>Built a <b>flight price prediction</b> system using <b>time series forecasting</b>, deployed on <b>Vertex AI</b> with data from <b>BigQuery</b>.</li>
+                <li>Built a <b>standardized ML pipeline</b> for preprocessing, training, and deployment on Vertex AI with feature store integration, versioning, and Airflow orchestration.</li>
+                <li>Designed a scalable <b>GenAI framework</b> on GCP with CI/CD, featuring rate limiting, monitoring, parallel processing, and <b>LLM-as-a-Judge</b> validation using <b>LangChain</b>.</li>
+                <li>Delivered <b>hotel review summarization</b> with sentiment analysis, achieving a <b>30% conversion rate uplift</b> through A/B testing.</li>
+              </ul>
+              <p class="experience-tools"><b>Tools:</b> Python, GCP, Vertex AI, BigQuery, LangChain, Airflow, Git</p>
+            </article>
+          </div>
+
+          <!-- AltaML -->
+          <div class="timeline-item">
+            <article class="experience-card">
+              <div class="experience-header">
+                <img src="/assets/img/logo-altaml.webp" alt="AltaML" class="company-logo" width="56" height="56" />
+                <div class="experience-meta">
+                  <h3><a href="https://altaml.com/" target="_blank" rel="noopener">AltaML</a></h3>
+                  <p class="experience-role">Data Scientist (Contract)</p>
+                  <p class="experience-date">Sep 2022 – Dec 2022 · Calgary, AB</p>
+                </div>
+              </div>
+              <ul>
+                <li>Implemented <b>LightGBM</b> and <b>XGBoost</b> for rock core permeability prediction with <b>94% accuracy</b>, saving upwards of $10M for the client.</li>
+                <li>Developed an ML pipeline from scratch on Azure with comprehensive error analysis to improve model performance.</li>
+                <li>Delivered bi-weekly client updates and presentations on model progress and findings.</li>
+              </ul>
+              <p class="experience-tools"><b>Tools:</b> Python, OpenCV, Azure ML Studio, Git, GitHub</p>
+            </article>
+          </div>
+
+          <!-- MIRA -->
+          <div class="timeline-item">
+            <article class="experience-card">
+              <div class="experience-header">
+                <img src="/assets/img/Chatbot_Blue.png" alt="MIRA Chatbot" class="company-logo" width="56" height="56" />
+                <div class="experience-meta">
+                  <h3>
+                    <a href="https://mymira.ca/" target="_blank" rel="noopener">MIRA Chatbot</a>
+                    <a href="https://www.youtube.com/watch?v=HZWX-P2Kbjw" target="_blank" rel="noopener" aria-label="MIRA demo on YouTube" style="margin-left: 8px; font-size: 0.85rem;">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                  </h3>
+                  <p class="experience-role">Data Scientist & Chatbot Developer</p>
+                  <p class="experience-date">Jan 2021 – Sep 2022 · Edmonton, AB</p>
+                </div>
+              </div>
+              <ul>
+                <li>Built and implemented the full-stack MIRA chatbot (backend and frontend).</li>
+                <li>Developed RNN language models for intent detection (<b>97% F1</b>) and entity extraction (<b>83% F1</b>).</li>
+                <li>Applied data augmentation, sentiment analysis, and automated bug reporting and daily analytics dashboards.</li>
+                <li>Trained and managed two undergraduate students on the chatbot team.</li>
+              </ul>
+              <p class="experience-tools"><b>Tools:</b> Python, Rasa, TensorFlow, Keras</p>
+              <div class="experience-video">
+                <iframe src="https://www.youtube.com/embed/g3Ojdaq7Y3o" title="MIRA Chatbot Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </article>
+          </div>
+
+          <!-- CafeIoT -->
+          <div class="timeline-item">
+            <article class="experience-card">
+              <div class="experience-header">
+                <img src="/assets/img/cafeiot-logo.jpeg" alt="CafeIoT" class="company-logo" width="56" height="56" />
+                <div class="experience-meta">
+                  <h3>CafeIoT</h3>
+                  <p class="experience-role">Data Scientist</p>
+                  <p class="experience-date">May 2019 – Jan 2021 · Tehran, Iran</p>
+                </div>
+              </div>
+              <ul>
+                <li>Led the technical side of the CafeIoT startup, managing development workflows and team coordination.</li>
+                <li>Collaborated using Git-based version control to organize modifications and assign tasks across the team.</li>
+              </ul>
+              <p class="experience-tools"><b>Tools:</b> Python, Django, PHP, Laravel, JavaScript, HTML/CSS</p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="section-label fade-in">Portfolio</p>
+        <h2 class="section-title fade-in">Selected Projects</h2>
+        <p class="section-subtitle fade-in">
+          Research and engineering work spanning NLP, ML pipelines, and applied AI.
+        </p>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/ml-pipeline.jpeg" alt="ML Pipeline Template" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">MLOps</span>
+              </div>
+              <h3>ML Pipeline Template</h3>
+              <p>A reusable ML pipeline template for fast experimentation, execution, and debugging across diverse problems.</p>
+              <div class="project-links">
+                <a href="https://github.com/zamaniali1995/ml-pipeline" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Source Code
                 </a>
-                <a href="https://github.com/zamaniali1995/" target="_blank" aria-label="GitHub Profile">
-                  <button class="icon-btn github">
-                    <i class="fab fa-github"></i>
-                  </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/burnout-callcentre.webp" alt="Burnout Detection" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Azure ML</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">BERT</span>
+              </div>
+              <h3>Burnout Detection</h3>
+              <p>Azure-based application detecting call center agent burnout using a BERT transformer model.</p>
+              <p class="project-details">Microsoft & AltaML Hackathon — full ML pipeline on Azure with pre-trained transformer.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/sarcasm-detection.jpeg" alt="Sarcasm Detection" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">Kaggle</span>
+              </div>
+              <h3>Sarcasm Detection</h3>
+              <p>Binary classifier determining whether a sentence is sarcastic or non-sarcastic.</p>
+              <p class="project-details">Kaggle competition — achieved 85%+ accuracy.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/fake-news.png" alt="Fake Disaster News Detection" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">Kaggle</span>
+              </div>
+              <h3>Fake Disaster News Detection</h3>
+              <p>Classification system distinguishing real disaster reports from misinformation.</p>
+              <p class="project-details">Kaggle competition — 90%+ accuracy across two competitions.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/commonsense-validation.jpeg" alt="Common Sense Validation" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">BERT</span>
+                <span class="project-tag">RoBERTa</span>
+                <span class="project-tag">SemEval</span>
+              </div>
+              <h3>Common Sense Validation & Explanation</h3>
+              <p>Identifying nonsensical sentences and explaining why they fail common sense checks.</p>
+              <p class="project-details">SemEval 2020 Task 4 — state-of-the-art transformer models.</p>
+              <div class="project-links">
+                <a href="https://github.com/zamaniali1995/commonsense-validation-and-explanation" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Source Code
                 </a>
-                <a href="mailto:zamaniali1995@gmail.com" aria-label="Email">
-                  <button class="icon-btn email" style="background: linear-gradient(135deg, #ea4335, #d33b2c);">
-                    <i class="fas fa-envelope"></i>
-                  </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/grammar-checker.jpeg" alt="Grammar Checker" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">CFG</span>
+              </div>
+              <h3>Grammar Checker</h3>
+              <p>Context-free grammar and constituency parsing for automated grammatical error detection.</p>
+              <div class="project-links">
+                <a href="https://github.com/zamaniali1995/grammar_checker" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Source Code
                 </a>
               </div>
-              
-              <div class='hero-buttons' style="margin-top: 2rem;">
-                <a href="#about" class="readme">About Me</a>
-                <a href="#experience" class="readme">Experience</a>
-                <a href="#projects" class="readme">Projects</a>
-                <a aria-label="Open Ali's resume in a new tab" href="https://zamaniali1995.github.io/assets/resume/AliZamaniCV.pdf" target="_blank" class="readme resume-btn">
-                  <i class="fas fa-download" style="margin-right: 8px;"></i>Resume
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/relation_extraction.jpeg" alt="Relation Extraction" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">Classification</span>
+              </div>
+              <h3>Relation Extraction</h3>
+              <p>Classifier mapping sentences to relation classes: publisher, performer, director, or character.</p>
+              <div class="project-links">
+                <a href="https://github.com/zamaniali1995/relation-extraction" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Source Code
                 </a>
               </div>
             </div>
-          </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="/assets/img/ngram_language_model.webp" alt="N-gram Language Model" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">NLP</span>
+              </div>
+              <h3>N-gram Language Model</h3>
+              <p>Building an n-gram language model from scratch for text generation and probability estimation.</p>
+              <div class="project-links">
+                <a href="https://github.com/zamaniali1995/ngram-language-model" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Second Section: About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
-      <div class="container flow-text">
-        <!-- <blockquote>
-          <h2>
-            A Data Scientist with a passion for Backend Development and Artificial Intelligence.
-
-          </h2>
-        </blockquote> -->        
-        <p>
-          🎓 Proud alum of Computer Science at the University of Alberta. 📚
-          <br>
-          🧩 Enthusiast for problem-solving and coding adventures. 🕵️‍♂️💻
-          <br>
-          🚀 Equipped with Python, TensorFlow, GCP, Azure ML, LangChain, MLOps, and cutting-edge AI technologies. 🧰✨
-          <br>
-          👷‍♂️ 4+ years of expertise in Python, Data Science, ML engineering, and GenAI solutions. 💪🔮
-          <br>
-          🏢 Currently serving as a Senior ML Engineer at Loblaw Digital, driving innovation in retail technology. 🏪
-          <br>
-          💡 Passionate about crafting AI solutions that tackle real-world challenges and positively impact millions. 🌍❤️
-          <br>
-          <br>
-          Ready to collaborate or chat about tech? Let's connect! 🤝🚀
-        </p>
-        <p>
-          <ul>
-            <li><b>Languages:</b> Python, C++, C, MATLAB, PHP, HTML/CSS, JavaScript, SQL</li>
-            <li><b>NLP & LLMs:</b> NLTK, Spacy, Gensim, Hugging Face Transformers, LangChain, OpenAI API, Stanza</li>
-            <li><b>Cloud & ML Platforms:</b> GCP (Vertex AI, BigQuery), Azure ML Studio, AWS, Google Cloud Functions</li>
-            <li><b>Databases:</b> MySQL, PostgreSQL, Microsoft SQL Server, SQLite, BigQuery, MongoDB</li>
-            <li><b>ML Libraries:</b> TensorFlow, PyTorch, Keras, Scikit-learn, XGBoost, LightGBM, Numpy, OpenCV, Scipy, Pandas</li>
-            <li><b>Web Frameworks:</b> Django, Flask, FastAPI, Laravel, React, Streamlit</li>
-            <li><b>MLOps & Tools:</b> Apache Airflow, MLflow, Docker, Kubernetes, Git, GitHub Actions, NGINX, Linux</li>
-            <li><b>Data Visualization:</b> Tableau, Power BI, Matplotlib, Seaborn, Plotly</li>
-            <li><b>Soft Skills:</b> Communication, Teamwork, Leadership, Work Ethic, Time Management, Problem Solving</li>
-          </ul>
-          
-        </p>
-          
-        <!-- <p>
-          
-          Detail-oriented Data Scientist with professional experience in Backend Development, Machine Learning, Computer Vision. I am adept in Python, Django, Flask, SQL, Machine Learning, Computer Vision.           
-        </p> -->
-        <!-- <p>
-          Looking for an opportunity to work in a challenging position combining my skills in Data Science, and ML Development, which provides professional development, interesting experiences and personal growth.
-        </p> -->
-        <!-- <p>
-          Another Paragraph
-        </p>  -->
-        <!-- <p>
-        <strong>Current Focus</strong>:&nbsp;<a aria-label="Navigate to the Inclusive Design Patterns homepage"
-          href="https://www.smashingmagazine.com/inclusive-design-patterns/">Accessibility</a>&nbsp;//&nbsp;<a
-          aria-label="Navigate to the Full Stack React homepage"
-          href="https://www.fullstackreact.com/">React</a>&nbsp;//&nbsp;<a
-          aria-label='Navigate to the article "Scalable CSS"'
-          href="https://mrmrs.github.io/writing/2016/03/24/scalable-css/">Design Systems</a>
-        </p> -->
-      </div>
-    </section>
-
-
-    <!-- Third Section: Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
+    <!-- Skills -->
+    <section id="skills" class="section">
       <div class="container">
-
-        <!-- Latest Experience -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <div style="background: linear-gradient(135deg, #ff6900, #fcb900); color: white; border-radius: 8px; padding: 20px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; text-align: center;">Loblaw Digital</div>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.loblawdigital.co/" target="_blank"
-                      class="teal-text hoverline">Loblaw Digital</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Senior Machine Learning Engineer</div>
-            <ul>
-              <li>
-                Leading development of advanced <b>machine learning solutions</b> for Canada's largest retailer, driving data-driven decision making across multiple business units.
-              </li>
-              <li>
-                Designing and implementing <b>MLOps pipelines</b> for scalable model deployment and monitoring in production environments.
-              </li>
-              <li>
-                Building <b>recommendation systems</b> and <b>predictive analytics</b> solutions to enhance customer experience and optimize business operations.
-              </li>
-              <li>
-                Collaborating with cross-functional teams to translate business requirements into technical ML solutions and drive innovation in retail technology.
-              </li>
-              <li>
-                <b>Tools:</b> Python, ML Pipeline, Cloud Platforms, Data Science, Leadership, Innovation
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Present | Canada</span>
-          </div>
-        </div>
-
-        <!-- Previous Experience -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://priceline.com/" target="_blank"><img alt="Priceline logo"
-                    src="/assets/img/priceline.webp" class="responsive-img center-block" /></a>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://Priceline.com/" target="_blank"
-                      class="teal-text hoverline">Priceline</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Machine Learning Engineer</div>
-            <ul>
-              <li>
-                Built a <b>flight price prediction</b> use case using <b>time series forecasting</b>. Deployed on <b>Vertex AI</b> with data from <b>BigQuery</b>, enabling data-driven pricing and integration with product features.
-              </li>
-              <li>
-                Built a <b>standardized ML pipeline</b> for preprocessing, training, and online/offline deployment on <b>Vertex AI</b>, featuring modular design, feature store integration, versioning, and backfilling. Orchestrated the pipeline with a reusable <b>Airflow DAG</b>.
-              </li>
-              <li>
-                Designed a scalable <b>GenAI framework</b> on GCP with CI/CD integration, featuring a robust <b>Inference module</b> with rate limiting, monitoring, parallel processing, and use-case-specific configuration, and a <b>Validation module</b> using <b>LLM-as-a-Judge</b> for automated evaluation and continuous quality feedback. Leveraged <b>LangChain</b> for orchestrating dynamic LLM workflows and integrating retrieval-augmented generation capabilities.
-              </li>
-              <li>
-                Delivered a <b>hotel review summarization</b> use case combining sentiment analysis and summarization, with an algorithm to surface high-impact reviews. Achieved a <b>30% conversion rate uplift</b> through A/B testing.
-              </li>
-              <li>
-                <b>Tools:</b> Python, GCP, Vertex AI, Git, GitHub, ML pipeline, Teamwork
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Mar. 2023 - 2024 | Toronto, ON, Canada</span>
-          </div>
-        </div>
-
-        <!-- Latest Experience -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://altaml.com/" target="_blank"><img alt="AltaML logo"
-                    src="/assets/img/logo-altaml.webp" class="responsive-img center-block" /></a>
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://altaml.com/" target="_blank"
-                      class="teal-text hoverline">Alta<b>ML</b></a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Data Scientist (Contract Position)</div>
-            <ul>
-              <li>
-                Implemented a <b>LightGBM</b> and <b>XGBoost</b> algorithm for predicting the permeability of rock core images with an accuracy of <b>94%</b>, saving upwards of 10 million dollars for the client.
-              </li>
-              <li>
-                Developed a Machine Learning pipeline from scratch on Azure and conducted error analysis to further improve the model performance.
-              </li>
-              <li>Conducted error analysis to analyze model performance.</li>
-              <li>Prepared bi-weekly update and present it to the client.</li>
-              <li>
-                <b>Tools:</b> Python, OpenCV, Azure ML Studio, Git, GitHub, ML pipeline, Teamwork
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Sept. 2022 - Dec. 2022 | Calgary, AB, Canada</span>
-          </div>
-        </div>
-
-        
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://mymira.ca/" target="_blank"><img alt="Mira logo"
-                    src="/assets/img/Chatbot_Blue.png" class="responsive-img center-block" /></a>
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://mymira.ca/" target="_blank"
-                      class="teal-text hoverline">MIRA Chatbot <a href="https://www.youtube.com/watch?v=HZWX-P2Kbjw" target="_blank" class="teal-text hoverline" ><i class="fa fa-youtube" aria-hidden="true"></i></a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Data Scientist and Chatbot Developer</div>
-            <ul>
-              <li>
-                Built and implemented the back-end and front-end of the MIRA chatbot.
-              </li>
-              <li>
-                Explored and compared different Recurrent Neural Network language models to detect the intent of a sentence and extract entities from it with an F1-score of <b>97%</b> and <b>83%</b>.
-              </li>
-              <li>
-                Used various data augmentation techniques like back translation and synonym replacement to increase the amount of training data in the MIRA chatbot.
-              </li>
-              <li>Applied Sentiment Analysis techniques to MIRA Chabot to identify the sentiment of users’ responses and modify the chatbot’s responses according to detected sentiments.</li>
-              <li>
-                Developed a system to automatically report bugs to decrease the time needed for team members to identify and fix bugs/issues.
-              </li>
-              <li>
-                Implemented different ways to visualize and send a daily report of MIRA chatbot statistics to team members.
-              </li>
-              <li>Trained and managed two undergraduate students in the MIRA chatbot team.</li>
-              <li>Developed a service to automatically perform a set of unit tests daily on a product in development to decrease the time needed for team members to identify and fix bugs/issues.</li>
-              <li>
-                <b>Tools:</b> Python, Rasa Framework, Tensorflow, Keras, Teamwork
-              </li>
-            </ul>
-          </div>
-          <div class="video-background">
-            <iframe src="https://www.youtube.com/embed/g3Ojdaq7Y3o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          
-          <div class="card-action">
-            <span>Jan. 2021 - Sept. 2022 | Edmonton, AB, Canada</span>
-          </div>
-        </div>
-
-        <!-- Experience 2 -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <img alt="CafeIoT logo" src="/assets/img/cafeiot-logo.jpeg" class="responsive-img center-block" />
-
-              </div>
-
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="#experience" class="teal-text hoverline">CafeIoT</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Data Scientist</div>
-            <ul>
-              <li>
-                Experience in leading a group by managing the technical part of CafeIot startup.
-              </li>
-              <li>
-                Collaborated with team members utilizing version control systems such as Git to organize modifications and assign tasks.
-              </li>
-              <li>
-                <b>Tools:</b> Python, Django, PHP, Laravel, JavaScript, HTML/CSS, Leadership
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>May 2019 - Jan. 2021 | Tehran, Iran</span>
-          </div>
-        </div>
-
-        <!-- Experience 3 -->
-        <!-- <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.cignex.com" target="_blank"><img alt="Cignex logo"
-                    src="/assets/img/exp-cignex-logo.png" class="responsive-img center-block" /></a>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.cignex.com" target="_blank"
-                      class="teal-text hoverline">CIGNEX
-                      Datamatics </a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Project Trainee</div>
-            <ul>
-              <li>
-                Designed a library management system for a local library, where we undertook activities like requirement
-                elicitation, preparing Data Flow
-                and Entity-Relationship diagrams.
-              </li>
-              <li>
-                Delivered a solution for a POC involving Automatic Financial Document Classifier using Natural Language
-                Processing and Support Vector
-                Machines with 96% accuracy on the company’s data.
-              </li>
-              <li>
-                <b>Tools:</b> Python, Scikit-learn, NLTK
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>June 2017 - July 2017 | Ahmedabad, India</span>
-          </div>
-        </div> -->
-
-      </div>
-    </section>
-
-    <!-- Fourth Section: Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
-      <div class="container">
-        <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="burnou detection" src="/assets/img/ml-pipeline.jpeg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">ML-Pipeline Template<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  An ML pipeline template to create a user-friendly utility to drastically speed up the development and implementation of a machine learning model for all sorts of various problems.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python</li>
-                  <li>The pipeline enables fast experimentation, easy execution, and simple debugging for all components.</li>            
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/zamaniali1995/ml-pipeline" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="burnou detection" src="/assets/img/burnout-callcentre.webp" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Burnout Detection<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  An application on Microsoft Azure for detecting burnout of a call center's agent
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Microsoft Azure Studio, Python, NLP</li>
-                  <li>Microsoft and AltaML Hackathon</li>
-                  <li>Developed an ML pipeline on Azure to detect burnout of a call center’s agent using a pre-trained
-                    transformer-based model (BERT).</li>                
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="quiz app" src="/assets/img/sarcasm-detection.jpeg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Sarcasm Detection<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Determining whether a sentence is sarcastic or non-sarcastic.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python, NLP</li>
-                  <li>Competed in a Kaggle competitions: Sarcasm Detection with an accuracy of 85+%.</li>
-                </ul>
-                <!-- <div class="card-action">
-                  <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/zamaniali1995/QuizUp"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- 1. Django Project -->
-          <!-- <div class="col s12 m6 l6">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="django web app" src="/assets/img/project-library-logo.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Local Library Web-App<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A web-app that creates an online catalog for a small local library, where users can browse available books and manage their accounts.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, Bootstrap, SQLite, Django, Heroku</li>
-                  <li>Users can view list and detail information for books and authors.</li>
-                  <li>Admin users can create and manage models.</li>
-                  <li>Librarians can renew reserved books.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://django-local-lib.herokuapp.com" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/zamaniali1995/django-local-library"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Flask Project -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of web app" src="/assets/img/fake-news.png"
-                style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Fake Disaster News Detection<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Classifying news as fake and real.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Python, NLP</li>
-                  <li>Competed in two Kaggle competitions: Fake Disaster News Classification, with an accuracy of 90+%.</li>
-                </ul>
-                <!-- <div class="card-action">
-                  <a aria-label="Visit Blog website" href="https://flask-heroku-blog.herokuapp.com/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/zamaniali1995/flask-blog"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- VQA -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/commonsense-validation.jpeg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Common Sense Validation and Explanation<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Identifying sentences that do not make sense and explain why they do not.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>SemEval 2020 - Task 4.</li>
-                  <li>Used state-of-the-art pre-trained transformer-based models (BERT & RoBERTa) to achieve
-                    higher performance on common sense validation and explanation tasks.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/zamaniali1995/commonsense-validation-and-explanation" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Video Summarizer -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/grammar-checker.jpeg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Grammar Checker<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Check for grammatical errors.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Used context-free grammar (CFG) and constituency parsing to build a grammar checker.</li>
-                </ul>
-                <!-- TODO: UPLOAD THIS PROJECT ON GITHUB -->
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/zamaniali1995/grammar_checker"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Image Generator -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/relation_extraction.jpeg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Relation Extraction<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Classify a given sentence to one of the four classes of publisher, performer, director, character.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span>
-                <!-- <!-- <span class="card-title brown-text"><small>Accomplishments</small><i -->
-                    <!-- class="mdi-navigation-close right"></i></span> -->
-                <ul>
-                  <li>we have implemented a relation extraction with the help of a classifier that can classify a given sentence to one of the four classes of publisher, performer, director, character.</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/zamaniali1995/relation-extraction"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Head Counting System -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/ngram_language_model.webp" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Ngram Language Model<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Building n-gram language model from scratch.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                 <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span>
-                 <!-- <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span> -->
-                <!-- <ul>
-                  <li>Used Singular Value Decomposition for image compression; applied various image processing
-                    techniques and morphological operations to
-                    detect the number of heads.</li>
-
-                </ul> -->
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/zamaniali1995/ngram-language-model" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> 
-
-          <!-- ************* -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Fifth Section: Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Skills</h3>
-      <div class="container">
-        <!-- Languages and Databases -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Languages and Databases</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/python-logo-1-300x300.jpg" class="responsive-img" height="200" width="200" />Python
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/c++-logo.png" class="responsive-img"  />C++
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/c-logo.png" class="responsive-img"  />C
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/php-logo.png" class="responsive-img"  />PHP
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/javascript-logo.png" class="responsive-img"  />JavaScript
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/html-logo.webp" class="responsive-img"  />HTML
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/css-logo.png" class="responsive-img"  />CSS
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/mysql-logo-1-300x300.jpg" class="responsive-img"  />MySQL
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/postgresql-logo.png" class="responsive-img"  />PostgreSQL
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/sqlite-logo.png" class="responsive-img"  />SQLite
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/sql-server-logo.png" class="responsive-img"  />Microsoft SQL Server
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">NLP & Large Language Models</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/NLTK-logo.png" class="responsive-img" />NLTK
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Spacy-logo.jpeg" class="responsive-img" />Spacy
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/gensim-logo.png" class="responsive-img" />Gensim
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Hugging-Face-logo.png" class="responsive-img"  />Hugging Face
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #10a37f, #1a7f64); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">LangChain</div>
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #412991, #7c3aed); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">OpenAI API</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Libraries</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/tensorflow-logo-1.png" class="responsive-img" />Tensorflow
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/pytorch-logo.png" class="responsive-img" />Pytorch
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/keras-logo.png" class="responsive-img" />Keras
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/sk-learn-logo-1-500x500.jpg" class="responsive-img"  />Sklearn
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/numpy-logo-1-500x500.jpg" class="responsive-img"  />Numpy
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/opencv-logo-1-500x500.jpg" class="responsive-img"  />OpenCV
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Scipy-logo.png" class="responsive-img"  />Scipy
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/pandas-logo-1.png" class="responsive-img"  />Pandas
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/react-logo.png" class="responsive-img"  />React
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Frameworks -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Web Frameworks & APIs</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/django-logo.webp" class="responsive-img"  />Django
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/flask-logo.png" class="responsive-img"  />Flask
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #009688, #00695c); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">FastAPI</div>
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/react-logo.png" class="responsive-img"  />React
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #ff4b4b, #ff6b6b); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">Streamlit</div>
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Rasa-logo.png" class="responsive-img"  />Rasa
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Cloud Platforms -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Cloud & ML Platforms</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #4285f4, #34a853); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">Google Cloud</div>
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Azure-ML-Studio-logo.jpeg" class="responsive-img"  />Azure ML
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/aws-logo.png" class="responsive-img"  />AWS
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #4285f4, #1a73e8); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">Vertex AI</div>
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #4285f4, #0f9d58); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">BigQuery</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- MLOps & Tools -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">MLOps & DevOps Tools</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Docker-logo.png" class="responsive-img"  />Docker
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #326ce5, #2851d6); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">Kubernetes</div>
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #017cee, #0056b3); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">Apache Airflow</div>
-              </div>
-              <div class="col s4 m2">
-                <div style="background: linear-gradient(135deg, #0194e2, #0073ba); color: white; border-radius: 8px; padding: 10px; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">MLflow</div>
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/git.png" class="responsive-img"  />Git
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Linux-logo.jpeg" class="responsive-img"  />Linux
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/NGINX-logo.png" class="responsive-img"  />NGINX
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Bash-logo.jpeg" class="responsive-img"  />Bash
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Visualizations</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Tableau-logo.png" class="responsive-img"  />Tableau
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/matplotlib-logo-1-500x500.jpg" class="responsive-img"  />Matplotlib
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Seaborn-logo.svg" class="responsive-img"  />Seaborn
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Plotly-logo.png" class="responsive-img"  />Plotly
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Microsoft-Power-BI-logo.png" class="responsive-img"  />Microsoft Power BI
-              </div>
-            </div>
-          </div>
-        </div>
-    
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Soft Skills</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Communication-logo.jpeg" class="responsive-img"  />Communication
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Teamwork-logo.jpeg" class="responsive-img"  />Teamwork
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Leadership-logo.jpeg" class="responsive-img"  />Leadership
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Work-Ethic-logo.jpeg" class="responsive-img"  />Work Ethic
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/assets/img/Time-Management-logo.webp" class="responsive-img"  />Time Management
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- certifications -->
-        <!-- <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Certificates</h4>
-            <div class="row text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="/assets/img/mooc-machine-learning-coursera-800x500.jpg">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text">Machine Learning (Stanford)</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="/assets/img/mooc-algorithms-stanford-2-800x500.jpg">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text">Algorithms (Stanford)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
-    </section>
-
-    <!-- Seventh Section: Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
-      <div class="container">
-        <div class="row">
-          <!-- Education -->
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.ualberta.ca/index.html" target="_blank" class="teal-text hoverline">University of Alberta</a></span>
-                </p>
-                <p class="brown-text">Edmonton, AB, Canada</p>
-                <p>
-                  <b>Degree: </b>M.Sc. in Computer Science      
-                </p>
-              </div>
-            </div>
-
-            
-          </div>
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://aut.ac.ir/en" target="_blank" class="teal-text hoverline">Amirkabir University of Technology</a></span>
-                </p>
-                <p class="brown-text">Tehran, Iran</p>
-                <p>
-                  <b>Degree: </b>M.Sc. in Computer Engineering
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://kashanu.ac.ir/En" target="_blank" class="teal-text hoverline">Kashan University</a></span>
-                </p>
-                <p class="brown-text">Kashan, Esfahan, Iran</p>
-                <p>
-                  <b>Degree: </b>BSc. in Electrical Engineering
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Eight Section: Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
-      <div class="container">
-        <!-- <p>
-          <a aria-label="Call Ali" data-position="top" data-tooltip="Call Ali"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
-              aria-label="Call Ali">+17807291995</a></a>
-        </p> -->
-        <p>
-          <a aria-label="Email Ali" href="mailto:zamaniali1995@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Ali" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Ali" href="mailto:zamaniali1995@gmail.com"
-              class="hoverline">zamaniali1995@gmail.com</a></a>
+        <p class="section-label fade-in">Expertise</p>
+        <h2 class="section-title fade-in">Skills & Technologies</h2>
+        <p class="section-subtitle fade-in">
+          Tools and frameworks I use to build, deploy, and scale machine learning systems.
         </p>
-        <p>
-          <a aria-label="View Ali on GitHub" href="http://github.com/zamaniali1995" target="_blank"
-            data-position="top" data-tooltip="View Ali on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
-              aria-label="Ali on Github" href="http://github.com/zamaniali1995" class="hoverline"
-              target="_blank">github.com/zamaniali1995</a></a>
-        </p>
-        <p>
-          <a aria-label="View Ali on LinkedIn" href="http://linkedin.com/in/zamaniali1995" target="_blank"
-            data-position="top" data-tooltip="View Ali on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i><a aria-label="Ali on LinkedIn" href="http://linkedin.com/in/zamaniali1995"
-              class="hoverline" target="_blank">linkedin.com/in/zamaniali1995</a></a>
-        </p>
+
+        <div class="skills-grid">
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-code"></i> Languages</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">MATLAB</span>
+              <span class="skill-pill">PHP</span>
+              <span class="skill-pill">HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-robot"></i> ML & AI</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">TensorFlow</span>
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">Scikit-learn</span>
+              <span class="skill-pill">XGBoost</span>
+              <span class="skill-pill">LightGBM</span>
+              <span class="skill-pill">OpenCV</span>
+              <span class="skill-pill">Pandas</span>
+              <span class="skill-pill">NumPy</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-language"></i> NLP & LLMs</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Hugging Face</span>
+              <span class="skill-pill">LangChain</span>
+              <span class="skill-pill">OpenAI API</span>
+              <span class="skill-pill">NLTK</span>
+              <span class="skill-pill">SpaCy</span>
+              <span class="skill-pill">Gensim</span>
+              <span class="skill-pill">Rasa</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-cloud"></i> Cloud & Platforms</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">GCP</span>
+              <span class="skill-pill">Vertex AI</span>
+              <span class="skill-pill">BigQuery</span>
+              <span class="skill-pill">Azure ML</span>
+              <span class="skill-pill">AWS</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-cogs"></i> MLOps & DevOps</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Kubernetes</span>
+              <span class="skill-pill">Airflow</span>
+              <span class="skill-pill">MLflow</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub Actions</span>
+              <span class="skill-pill">Linux</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-globe"></i> Web & APIs</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">FastAPI</span>
+              <span class="skill-pill">Django</span>
+              <span class="skill-pill">Flask</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">Streamlit</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-database"></i> Databases</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">SQLite</span>
+              <span class="skill-pill">BigQuery</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <h4><i class="fas fa-chart-bar"></i> Visualization</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Matplotlib</span>
+              <span class="skill-pill">Seaborn</span>
+              <span class="skill-pill">Plotly</span>
+              <span class="skill-pill">Tableau</span>
+              <span class="skill-pill">Power BI</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container">
+        <p class="section-label fade-in">Education</p>
+        <h2 class="section-title fade-in">Academic Background</h2>
+        <p class="section-subtitle fade-in">
+          Strong foundation in computer science and engineering across three degrees.
+        </p>
+
+        <div class="education-grid">
+          <article class="education-card fade-in">
+            <h3><a href="https://www.ualberta.ca/" target="_blank" rel="noopener">University of Alberta</a></h3>
+            <p class="education-location">Edmonton, AB, Canada</p>
+            <p class="education-degree"><b>Degree:</b> M.Sc. in Computer Science</p>
+          </article>
+          <article class="education-card fade-in">
+            <h3><a href="https://aut.ac.ir/en" target="_blank" rel="noopener">Amirkabir University of Technology</a></h3>
+            <p class="education-location">Tehran, Iran</p>
+            <p class="education-degree"><b>Degree:</b> M.Sc. in Computer Engineering</p>
+          </article>
+          <article class="education-card fade-in">
+            <h3><a href="https://kashanu.ac.ir/En" target="_blank" rel="noopener">Kashan University</a></h3>
+            <p class="education-location">Kashan, Esfahan, Iran</p>
+            <p class="education-degree"><b>Degree:</b> B.Sc. in Electrical Engineering</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <p class="section-label fade-in">Get in Touch</p>
+        <h2 class="section-title fade-in">Let's Connect</h2>
+        <p class="section-subtitle fade-in">
+          Open to collaborations, consulting, and conversations about ML, AI, and engineering.
+        </p>
+
+        <div class="contact-cards">
+          <a href="mailto:zamaniali1995@gmail.com" class="contact-card fade-in">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+            <strong>zamaniali1995@gmail.com</strong>
+          </a>
+          <a href="https://linkedin.com/in/zamaniali1995" target="_blank" rel="noopener" class="contact-card fade-in">
+            <i class="fab fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+            <strong>linkedin.com/in/zamaniali1995</strong>
+          </a>
+          <a href="https://github.com/zamaniali1995" target="_blank" rel="noopener" class="contact-card fade-in">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+            <strong>github.com/zamaniali1995</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Data Scientist", "ML Engineer", "AI Enthusiast", "Problem Solver"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
-    });
-  </script>
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; built by <a href="https://github.com/zamaniali1995">Ali Zamani</a> · © 2026</p>
+    </div>
+  </footer>
 
-
-  <!-- jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $('.scrollspy').scrollSpy();
-      // Initialize sidenav for mobile
-      $('.sidenav').sidenav({
-        menuWidth: 190,
-        edge: 'left',
-        closeOnClick: true
-      });
-
-      // Smooth scrolling for navigation links
-      $('a[href^="#"]').on('click', function(event) {
-        var target = $(this.getAttribute('href'));
-        if( target.length ) {
-          event.preventDefault();
-          $('html, body').stop().animate({
-            scrollTop: target.offset().top - 64
-          }, 800, 'easeInOutExpo');
-        }
-      });
-
-      // Add loading animation
-      $('.card').each(function(index) {
-        $(this).css('animation-delay', (index * 0.1) + 's');
-      });
-
-      // Intersection Observer for animations
-      if ('IntersectionObserver' in window) {
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-in');
-            }
-          });
-        }, observerOptions);
-
-        document.querySelectorAll('.card').forEach(card => {
-          observer.observe(card);
-        });
-      }
-    })
-  </script>
-
-  <!-- jQuery Easing Plugin for smooth scrolling -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="/assets/vendor/typed.js/typed.min.js"></script>
+  <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
