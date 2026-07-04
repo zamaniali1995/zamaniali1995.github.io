@@ -6,9 +6,9 @@
     new Typed('.typing', {
       strings: [
         'Machine Learning Engineer',
+        'Senior ML/AI Engineer',
+        'Agentic AI Engineer',
         'Data Scientist',
-        'GenAI Specialist',
-        'MLOps Engineer',
       ],
       loop: true,
       typeSpeed: 60,

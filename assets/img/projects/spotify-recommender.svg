@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Spotify Music Recommender">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f0a"/>
+      <stop offset="100%" stop-color="#122612"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg7)"/>
+  <circle cx="400" cy="210" r="100" fill="#1db954" opacity="0.15"/>
+  <circle cx="400" cy="210" r="70" fill="#1a2234" stroke="#1db954" stroke-width="3"/>
+  <path d="M370 195 Q400 175 430 195 T490 205" fill="none" stroke="#1db954" stroke-width="5" stroke-linecap="round"/>
+  <path d="M360 220 Q400 200 440 220 T500 232" fill="none" stroke="#1ed760" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M350 245 Q400 225 450 245 T510 258" fill="none" stroke="#1ed760" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <rect x="170" y="150" width="90" height="90" rx="12" fill="#243049" stroke="#475569" stroke-width="1.5"/>
+  <rect x="540" y="150" width="90" height="90" rx="12" fill="#243049" stroke="#1db954" stroke-width="1.5"/>
+  <rect x="170" y="260" width="90" height="90" rx="12" fill="#243049" stroke="#475569" stroke-width="1.5"/>
+  <rect x="540" y="260" width="90" height="90" rx="12" fill="#243049" stroke="#475569" stroke-width="1.5"/>
+  <line x1="260" y1="195" x2="330" y2="210" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="470" y1="210" x2="540" y2="195" stroke="#1db954" stroke-width="1.5"/>
+  <text x="400" y="360" text-anchor="middle" fill="#e2e8f0" font-size="24" font-weight="700" font-family="Inter, Arial, sans-serif">Music Recommender</text>
+  <text x="400" y="390" text-anchor="middle" fill="#1db954" font-size="15" font-family="Inter, Arial, sans-serif">Content-Based / Clustering / Deep Learning</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Neighborhood Recommendation System">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1a2e"/>
+      <stop offset="100%" stop-color="#132743"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg4)"/>
+  <path d="M0 320 Q200 280 400 300 T800 290 V450 H0 Z" fill="#1e3a5f" opacity="0.5"/>
+  <circle cx="200" cy="180" r="40" fill="#4285f4" opacity="0.25"/>
+  <circle cx="350" cy="140" r="55" fill="#34a853" opacity="0.2"/>
+  <circle cx="520" cy="190" r="45" fill="#fbbc04" opacity="0.22"/>
+  <circle cx="620" cy="130" r="35" fill="#ea4335" opacity="0.2"/>
+  <path d="M200 180 L350 140 L520 190 L620 130" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5" opacity="0.6"/>
+  <rect x="310" y="240" width="180" height="110" rx="16" fill="#1a2234" stroke="#4285f4" stroke-width="2"/>
+  <circle cx="400" cy="275" r="22" fill="#4285f4"/>
+  <path d="M392 285 L400 265 L408 285 Z" fill="#fff"/>
+  <text x="400" y="325" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="600" font-family="Inter, Arial, sans-serif">Neighborhood Match</text>
+  <text x="400" y="390" text-anchor="middle" fill="#fbbc04" font-size="14" font-weight="700" font-family="Inter, Arial, sans-serif">Google Hackathon - 1st Place</text>
+</svg>

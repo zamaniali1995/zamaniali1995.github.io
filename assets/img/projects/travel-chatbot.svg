@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Travel Assistance Chatbot">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151028"/>
+      <stop offset="100%" stop-color="#251a45"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg5)"/>
+  <circle cx="620" cy="100" r="80" fill="#818cf8" opacity="0.12"/>
+  <rect x="180" y="90" width="440" height="250" rx="24" fill="#1a2234" stroke="#818cf8" stroke-width="2"/>
+  <rect x="210" y="125" width="220" height="48" rx="14" fill="#243049"/>
+  <text x="230" y="155" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="15">Where should I travel?</text>
+  <rect x="370" y="195" width="220" height="56" rx="14" fill="#312e81"/>
+  <text x="390" y="220" fill="#e0e7ff" font-family="Inter, Arial, sans-serif" font-size="14">Try Kyoto in spring</text>
+  <text x="390" y="240" fill="#a5b4fc" font-family="Inter, Arial, sans-serif" font-size="12">GPT-4 powered</text>
+  <path d="M250 290 H550" stroke="#334155" stroke-width="2"/>
+  <rect x="210" y="305" width="360" height="12" rx="6" fill="#334155"/>
+  <circle cx="680" cy="320" r="28" fill="#c084fc" opacity="0.35"/>
+  <text x="400" y="385" text-anchor="middle" fill="#e2e8f0" font-size="22" font-weight="700" font-family="Inter, Arial, sans-serif">Travel Assistance Chatbot</text>
+</svg>

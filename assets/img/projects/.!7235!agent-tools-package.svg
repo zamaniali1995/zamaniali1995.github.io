@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Agent Tools Package">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg1)"/>
+  <circle cx="650" cy="80" r="120" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="100" cy="380" r="90" fill="#818cf8" opacity="0.1"/>
+  <rect x="120" y="110" width="560" height="230" rx="20" fill="#1a2234" stroke="url(#accent1)" stroke-width="2"/>
+  <rect x="160" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#38bdf8" stroke-width="1.5" opacity="0.9"/>
+  <rect x="330" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+  <rect x="500" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#c084fc" stroke-width="1.5" opacity="0.9"/>
+  <circle cx="195" cy="175" r="8" fill="#38bdf8"/>
+  <circle cx="365" cy="175" r="8" fill="#818cf8"/>
+  <circle cx="535" cy="175" r="8" fill="#c084fc"/>
+  <rect x="195" y="195" width="70" height="8" rx="4" fill="#475569"/>
+  <rect x="365" y="195" width="70" height="8" rx="4" fill="#475569"/>
+  <rect x="535" y="195" width="70" height="8" rx="4" fill="#475569"/>
+  <path d="M230 260 H570" stroke="#334155" stroke-width="2" stroke-dasharray="8 6"/>
+  <rect x="280" y="245" width="240" height="55" rx="14" fill="url(#accent1)" opacity="0.25"/>

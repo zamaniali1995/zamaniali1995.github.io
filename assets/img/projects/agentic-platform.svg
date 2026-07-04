@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Agentic Platform Architecture">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f1147"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg3)"/>
+  <circle cx="400" cy="210" r="45" fill="url(#accent3)" opacity="0.85"/>
+  <text x="400" y="218" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">PLAN</text>
+  <circle cx="250" cy="130" r="34" fill="#1a2234" stroke="#818cf8" stroke-width="2"/>
+  <circle cx="550" cy="130" r="34" fill="#1a2234" stroke="#c084fc" stroke-width="2"/>
+  <circle cx="250" cy="300" r="34" fill="#1a2234" stroke="#38bdf8" stroke-width="2"/>
+  <circle cx="550" cy="300" r="34" fill="#1a2234" stroke="#a78bfa" stroke-width="2"/>
+  <line x1="280" y1="155" x2="365" y2="185" stroke="#475569" stroke-width="2"/>
+  <line x1="520" y1="155" x2="435" y2="185" stroke="#475569" stroke-width="2"/>
+  <line x1="280" y1="275" x2="365" y2="235" stroke="#475569" stroke-width="2"/>
+  <line x1="520" y1="275" x2="435" y2="235" stroke="#475569" stroke-width="2"/>
+  <text x="250" y="135" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Agent</text>
+  <text x="550" y="135" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Agent</text>
+  <text x="250" y="305" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Memory</text>
+  <text x="550" y="305" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Guard</text>
+  <text x="400" y="380" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Agentic Architecture</text>
+  <text x="400" y="410" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="15">Planner / Agents / Memory / Guardrails</text>
+</svg>

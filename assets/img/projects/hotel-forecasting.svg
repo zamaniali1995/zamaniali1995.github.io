@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Hotel Revenue Forecasting">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#12263a"/>
+    </linearGradient>
+    <linearGradient id="line6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg6)"/>
+  <line x1="120" y1="300" x2="680" y2="300" stroke="#334155" stroke-width="2"/>
+  <line x1="120" y1="120" x2="120" y2="300" stroke="#334155" stroke-width="2"/>
+  <polyline points="140,260 220,240 300,220 380,200 460,170 540,150 620,120 700,100" fill="none" stroke="url(#line6)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="140,260 220,240 300,220 380,200 460,170 540,150 620,120 700,100 700,300 140,300" fill="#0ea5e9" opacity="0.12"/>
+  <circle cx="700" cy="100" r="8" fill="#22d3ee"/>
+  <rect x="500" y="130" width="150" height="50" rx="10" fill="#1a2234" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="575" y="160" text-anchor="middle" fill="#22d3ee" font-size="14" font-weight="700" font-family="Inter, Arial, sans-serif">2024 Forecast</text>
+  <text x="400" y="360" text-anchor="middle" fill="#e2e8f0" font-size="24" font-weight="700" font-family="Inter, Arial, sans-serif">Hotel Revenue Forecasting</text>
+  <text x="400" y="390" text-anchor="middle" fill="#64748b" font-size="15" font-family="Inter, Arial, sans-serif">Time Series / Machine Learning</text>
+</svg>

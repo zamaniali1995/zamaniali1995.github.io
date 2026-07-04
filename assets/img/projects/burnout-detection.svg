@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Burnout Detection System">
+  <defs>
+    <linearGradient id="burn-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#132743"/>
+    </linearGradient>
+    <linearGradient id="burn-azure" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078d4"/>
+      <stop offset="100%" stop-color="#50e6ff"/>
+    </linearGradient>
+    <linearGradient id="burn-alert" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="burn-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#burn-bg)"/>
+  <circle cx="700" cy="90" r="110" fill="#0078d4" opacity="0.15"/>
+  <circle cx="90" cy="360" r="80" fill="#ef4444" opacity="0.1"/>
+
+  <!-- Dashboard panel -->
+  <rect x="200" y="95" width="400" height="230" rx="24" fill="#1a2234" stroke="url(#burn-azure)" stroke-width="3" filter="url(#burn-glow)"/>
+
+  <!-- Headset / call center icon -->
+  <path d="M310 175 C310 145 340 125 375 125 C410 125 440 145 440 175" fill="none" stroke="#50e6ff" stroke-width="5" stroke-linecap="round"/>
+  <rect x="295" y="172" width="28" height="48" rx="12" fill="#0078d4"/>
+  <rect x="427" y="172" width="28" height="48" rx="12" fill="#0078d4"/>
+  <path d="M323 195 H427" stroke="#0078d4" stroke-width="6"/>
+
+  <!-- BERT chip -->
+  <rect x="470" y="140" width="100" height="52" rx="10" fill="#243049" stroke="#818cf8" stroke-width="2"/>
+  <text x="520" y="172" text-anchor="middle" fill="#c4b5fd" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">BERT</text>
+
+  <!-- Stress meter -->
+  <rect x="260" y="235" width="280" height="28" rx="14" fill="#334155"/>
+  <rect x="260" y="235" width="210" height="28" rx="14" fill="url(#burn-alert)"/>
+  <text x="400" y="254" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Burnout Risk: High</text>
+
+  <!-- Sentiment wave -->
+  <path d="M250 290 Q280 270 310 290 T370 290 T430 290 T490 290" fill="none" stroke="#50e6ff" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Azure badge -->
+  <rect x="318" y="315" width="164" height="34" rx="17" fill="#0078d4"/>
+  <text x="400" y="337" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Microsoft Azure</text>
+
+  <text x="400" y="385" text-anchor="middle" fill="#f1f5f9" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Burnout Detection</text>
+  <text x="400" y="415" text-anchor="middle" fill="#50e6ff" font-family="Inter, Arial, sans-serif" font-size="15">Azure / BERT / Microsoft Hackathon</text>
+</svg>
