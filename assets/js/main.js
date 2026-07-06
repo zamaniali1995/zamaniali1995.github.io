@@ -5,7 +5,7 @@
   if (typeof Typed !== 'undefined') {
     new Typed('.typing', {
       strings: [
-        'Senior Machine Learning Engineer',
+        'Machine Learning Engineer',
         'Agentic AI Engineer',
       ],
       loop: true,

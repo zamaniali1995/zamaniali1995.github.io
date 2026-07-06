@@ -5,3 +5,5 @@ Disallow: /nogooglebot/
 # Group 2
 User-agent: *
 Allow: /
+
+Sitemap: https://zamaniali1995.github.io/sitemap.xml

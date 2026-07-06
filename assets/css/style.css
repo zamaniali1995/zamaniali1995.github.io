@@ -50,6 +50,26 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 16px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  transition: top var(--transition);
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 ::selection {
   background: rgba(56, 189, 248, 0.3);
   color: var(--text-primary);
@@ -443,30 +463,140 @@ ul {
   position: relative;
 }
 
-.hero-image-wrap {
+.hero-diagram-wrap {
   position: relative;
-  width: min(340px, 100%);
+  width: min(380px, 100%);
 }
 
-.hero-image-wrap::before {
+.hero-diagram-wrap::before {
   content: '';
   position: absolute;
-  inset: -3px;
-  border-radius: var(--radius-lg);
+  inset: 10%;
+  border-radius: 50%;
   background: var(--gradient);
-  opacity: 0.5;
-  filter: blur(20px);
+  opacity: 0.12;
+  filter: blur(40px);
   z-index: 0;
 }
 
-.hero-image-wrap img {
+.agentic-diagram {
   position: relative;
   z-index: 1;
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  border: 2px solid var(--border);
+  height: auto;
+  display: block;
+}
+
+.hero-diagram-caption {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Agentic diagram animations */
+.agentic-orbit {
+  transform-origin: 200px 200px;
+  animation: agentic-orbit-spin 30s linear infinite;
+}
+
+.agentic-flow {
+  stroke-dasharray: 6 10;
+  animation: agentic-flow-dash 2s linear infinite;
+}
+
+.agentic-flow--2 { animation-delay: 0.4s; }
+.agentic-flow--3 { animation-delay: 0.8s; }
+.agentic-flow--4 { animation-delay: 1.2s; }
+.agentic-flow--5 { animation-delay: 1.6s; }
+
+.agentic-node--planner {
+  transform-origin: 200px 200px;
+  animation: agentic-planner-pulse 3s ease-in-out infinite;
+}
+
+.agentic-node--agent {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: agentic-node-float 4s ease-in-out infinite;
+}
+
+.agentic-node--delay-1 { animation-delay: 0.5s; }
+.agentic-node--delay-2 { animation-delay: 1s; }
+.agentic-node--delay-3 { animation-delay: 1.5s; }
+.agentic-node--delay-4 { animation-delay: 2s; }
+
+.agentic-pulse-dot {
+  animation: agentic-dot-pulse 2s ease-in-out infinite;
+}
+
+.agentic-pulse-dot--delay-1 { animation-delay: 0.6s; }
+
+.agentic-particle {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.agentic-particle--1 {
+  animation: agentic-particle-1 3s ease-in-out infinite;
+}
+
+.agentic-particle--2 {
+  animation: agentic-particle-2 3.5s ease-in-out infinite 0.5s;
+}
+
+.agentic-particle--3 {
+  animation: agentic-particle-3 4s ease-in-out infinite 1s;
+}
+
+@keyframes agentic-orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes agentic-flow-dash {
+  to { stroke-dashoffset: -32; }
+}
+
+@keyframes agentic-planner-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.88; }
+}
+
+@keyframes agentic-node-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes agentic-dot-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes agentic-particle-1 {
+  0% { transform: translate(200px, 155px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate(120px, 95px); opacity: 0; }
+}
+
+@keyframes agentic-particle-2 {
+  0% { transform: translate(200px, 155px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate(280px, 95px); opacity: 0; }
+}
+
+@keyframes agentic-particle-3 {
+  0% { transform: translate(200px, 245px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate(200px, 320px); opacity: 0; }
 }
 
 .hero-stats {
@@ -537,9 +667,75 @@ ul {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 48px;
   align-items: start;
+}
+
+.about-profile {
+  text-align: center;
+}
+
+.about-photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto 20px;
+}
+
+.about-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient);
+  opacity: 0.45;
+  filter: blur(16px);
+  z-index: 0;
+}
+
+.about-photo-wrap img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border);
+}
+
+.about-profile-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.about-profile-role {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.about-profile-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.about-profile-location i {
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.about-highlights--wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 .about-text p {
@@ -696,6 +892,10 @@ ul {
   padding: 4px;
   object-fit: contain;
   border: 1px solid rgba(29, 184, 168, 0.25);
+}
+
+.company-logo--loblaw {
+  object-fit: contain;
 }
 
 .experience-meta h3 {
@@ -1109,6 +1309,7 @@ ul {
 .publication-link {
   display: inline-block;
   margin-top: 12px;
+  margin-right: 16px;
   color: var(--accent);
   font-size: 0.875rem;
   font-weight: 500;
@@ -1202,9 +1403,9 @@ ul {
 
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -1290,6 +1491,16 @@ ul {
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
+  .agentic-orbit,
+  .agentic-flow,
+  .agentic-node--planner,
+  .agentic-node--agent,
+  .agentic-pulse-dot,
+  .agentic-particle--1,
+  .agentic-particle--2,
+  .agentic-particle--3 {
+    animation: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -1320,8 +1531,8 @@ ul {
     order: -1;
   }
 
-  .hero-image-wrap {
-    width: min(260px, 70%);
+  .hero-diagram-wrap {
+    width: min(300px, 85%);
     margin: 0 auto;
   }
 
@@ -1333,6 +1544,15 @@ ul {
 
   .about-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-highlights--wide {
+    grid-template-columns: 1fr;
+  }
+
+  .about-profile {
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .nav-links {

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-label="Loblaw Digital">
+  <defs>
+    <linearGradient id="ld-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6900"/>
+      <stop offset="100%" stop-color="#fcb900"/>
+    </linearGradient>
+  </defs>
+  <rect width="56" height="56" rx="12" fill="#1a2234"/>
+  <rect x="4" y="4" width="48" height="48" rx="10" fill="url(#ld-grad)"/>
+  <text x="28" y="36" text-anchor="middle" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">LD</text>
+</svg>

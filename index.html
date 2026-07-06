@@ -26,22 +26,66 @@
   <meta property="og:description" content="Senior ML/AI Engineer architecting enterprise agentic AI, production RAG, and platform infrastructure at Loblaw Digital." />
   <meta property="og:url" content="https://zamaniali1995.github.io/" />
   <meta property="og:site_name" content="Ali Zamani Portfolio" />
+  <meta property="og:image" content="https://zamaniali1995.github.io/assets/img/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ali Zamani — Senior ML/AI Engineer at Loblaw Digital" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@a1i_zmn_" />
   <meta name="twitter:title" content="Ali Zamani | Senior ML/AI Engineer" />
   <meta name="twitter:description" content="Senior ML/AI Engineer specializing in agentic AI, RAG systems, LangGraph, and production GenAI." />
+  <meta name="twitter:image" content="https://zamaniali1995.github.io/assets/img/og-image.svg" />
+
+  <link rel="canonical" href="https://zamaniali1995.github.io/" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png" />
   <meta name="theme-color" content="#0a0e17" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ali Zamani",
+    "url": "https://zamaniali1995.github.io/",
+    "image": "https://zamaniali1995.github.io/assets/img/ali-zamani-pic.jpeg",
+    "jobTitle": "Senior ML/AI Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Loblaw Digital",
+      "url": "https://www.loblawdigital.co/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/zamaniali1995",
+      "https://github.com/zamaniali1995",
+      "https://scholar.google.com/citations?user=cFk5cpEAAAAJ",
+      "https://orcid.org/0000-0001-7320-0976"
+    ],
+    "knowsAbout": [
+      "Agentic AI",
+      "Retrieval-Augmented Generation",
+      "Machine Learning",
+      "Large Language Models",
+      "MLOps"
+    ]
+  }
+  </script>
 </head>
 
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <div class="bg-mesh" aria-hidden="true"></div>
 
@@ -49,7 +93,7 @@
   <header class="nav" role="banner">
     <div class="nav-inner">
       <a href="#intro" class="nav-logo" aria-label="Ali Zamani — Home">
-        <img src="/assets/img/ali-zamani-pic.jpeg" alt="Ali Zamani" width="40" height="40" />
+        <img src="assets/img/ali-zamani-pic.jpeg" alt="Ali Zamani" width="40" height="40" />
         <span>Ali Zamani</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
@@ -60,7 +104,7 @@
         <a href="#education" data-section="education">Education</a>
         <a href="#publications" data-section="publications">Publications</a>
         <a href="#contact" data-section="contact">Contact</a>
-        <a href="/assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+        <a href="assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
       </nav>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <i class="fas fa-bars"></i>
@@ -74,11 +118,11 @@
       <a href="#education">Education</a>
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
-      <a href="/assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- Hero -->
     <section id="intro" class="hero">
@@ -100,7 +144,7 @@
               <a href="#projects" class="btn btn-primary">
                 <i class="fas fa-code"></i> View Projects
               </a>
-              <a href="/assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+              <a href="assets/resume/AliZamaniCV.pdf" target="_blank" rel="noopener" class="btn btn-outline">
                 <i class="fas fa-download"></i> Download Resume
               </a>
             </div>
@@ -134,8 +178,89 @@
             </div>
           </div>
           <div class="hero-visual">
-            <div class="hero-image-wrap">
-              <img src="/assets/img/ali-zamani-pic.jpeg" alt="Ali Zamani — Senior ML/AI Engineer" width="340" height="340" />
+            <div class="hero-diagram-wrap">
+              <svg class="agentic-diagram" viewBox="0 0 400 400" role="img" aria-label="Planner-based agentic AI architecture diagram">
+                <defs>
+                  <linearGradient id="ag-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#38bdf8"/>
+                    <stop offset="50%" stop-color="#818cf8"/>
+                    <stop offset="100%" stop-color="#c084fc"/>
+                  </linearGradient>
+                  <filter id="ag-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <!-- Orbit ring -->
+                <circle class="agentic-orbit" cx="200" cy="200" r="148" fill="none" stroke="url(#ag-gradient)" stroke-width="1" opacity="0.2"/>
+
+                <!-- Flow paths -->
+                <path class="agentic-flow agentic-flow--1" d="M200 155 L120 95" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                <path class="agentic-flow agentic-flow--2" d="M200 155 L280 95" fill="none" stroke="#818cf8" stroke-width="2"/>
+                <path class="agentic-flow agentic-flow--3" d="M200 245 L95 280" fill="none" stroke="#a78bfa" stroke-width="2"/>
+                <path class="agentic-flow agentic-flow--4" d="M200 245 L305 280" fill="none" stroke="#c084fc" stroke-width="2"/>
+                <path class="agentic-flow agentic-flow--5" d="M200 245 L200 320" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+                <!-- Planner (center) -->
+                <g class="agentic-node agentic-node--planner" filter="url(#ag-glow)">
+                  <circle cx="200" cy="200" r="42" fill="url(#ag-gradient)"/>
+                  <text x="200" y="197" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800">PLANNER</text>
+                  <text x="200" y="212" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" opacity="0.8">Orchestrator</text>
+                </g>
+
+                <!-- Agent: Retrieval -->
+                <g class="agentic-node agentic-node--agent">
+                  <rect x="72" y="62" width="96" height="52" rx="12" fill="#1a2234" stroke="#38bdf8" stroke-width="2"/>
+                  <circle cx="88" cy="82" r="5" fill="#38bdf8" class="agentic-pulse-dot"/>
+                  <text x="120" y="86" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Retrieval</text>
+                  <text x="120" y="100" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Agent</text>
+                </g>
+
+                <!-- Agent: Action -->
+                <g class="agentic-node agentic-node--agent agentic-node--delay-1">
+                  <rect x="232" y="62" width="96" height="52" rx="12" fill="#1a2234" stroke="#818cf8" stroke-width="2"/>
+                  <circle cx="248" cy="82" r="5" fill="#818cf8" class="agentic-pulse-dot agentic-pulse-dot--delay-1"/>
+                  <text x="280" y="86" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Action</text>
+                  <text x="280" y="100" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Agent</text>
+                </g>
+
+                <!-- Memory -->
+                <g class="agentic-node agentic-node--agent agentic-node--delay-2">
+                  <rect x="42" y="258" width="106" height="52" rx="12" fill="#1a2234" stroke="#a78bfa" stroke-width="2"/>
+                  <text x="95" y="280" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Memory</text>
+                  <text x="95" y="296" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">LTM · STM · Episodic</text>
+                </g>
+
+                <!-- Guardrails -->
+                <g class="agentic-node agentic-node--agent agentic-node--delay-3">
+                  <rect x="252" y="258" width="106" height="52" rx="12" fill="#1a2234" stroke="#c084fc" stroke-width="2"/>
+                  <text x="305" y="280" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Guardrails</text>
+                  <text x="305" y="296" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Pre · Post · Policy</text>
+                </g>
+
+                <!-- MCP Tools -->
+                <g class="agentic-node agentic-node--agent agentic-node--delay-4">
+                  <rect x="142" y="328" width="116" height="44" rx="12" fill="#1a2234" stroke="#38bdf8" stroke-width="2"/>
+                  <text x="200" y="348" text-anchor="middle" fill="#38bdf8" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700">MCP Tool Package</text>
+                  <text x="200" y="362" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Shared Agent Infrastructure</text>
+                </g>
+
+                <!-- Traveling particles -->
+                <g class="agentic-particle agentic-particle--1">
+                  <circle r="4" fill="#38bdf8"/>
+                </g>
+                <g class="agentic-particle agentic-particle--2">
+                  <circle r="4" fill="#818cf8"/>
+                </g>
+                <g class="agentic-particle agentic-particle--3">
+                  <circle r="3" fill="#a78bfa"/>
+                </g>
+              </svg>
+              <p class="hero-diagram-caption">Planner-based Agentic Architecture</p>
             </div>
           </div>
         </div>
@@ -155,6 +280,14 @@
           M.Sc. in Computer Science (University of Alberta) · Senior ML/AI Engineer at Loblaw Digital, Toronto.
         </p>
         <div class="about-grid">
+          <div class="about-profile fade-in">
+            <div class="about-photo-wrap">
+              <img src="assets/img/ali-zamani-pic.jpeg" alt="Ali Zamani — Senior ML/AI Engineer" width="260" height="260" loading="lazy" />
+            </div>
+            <p class="about-profile-name">Ali Zamani</p>
+            <p class="about-profile-role">Senior ML/AI Engineer</p>
+            <p class="about-profile-location"><i class="fas fa-location-dot"></i> Toronto, ON</p>
+          </div>
           <div class="about-text fade-in">
             <p>
               I build production AI systems end to end — from planner-based agentic architectures and hybrid-search RAG
@@ -171,7 +304,7 @@
               <strong>flight price prediction</strong> system using time series forecasting on Vertex AI and BigQuery.
             </p>
           </div>
-          <div class="about-highlights fade-in">
+          <div class="about-highlights fade-in about-highlights--wide">
             <div class="highlight-item">
               <div class="highlight-icon"><i class="fas fa-toolbox"></i></div>
               <div>
@@ -220,7 +353,7 @@
           <div class="timeline-item">
             <article class="experience-card">
               <div class="experience-header">
-                <div class="company-logo-text company-logo-text--loblaw">Loblaw Digital</div>
+                <img src="assets/img/logo-loblaw.svg" alt="Loblaw Digital" class="company-logo company-logo--loblaw" width="56" height="56" />
                 <div class="experience-meta">
                   <h3><a href="https://www.loblawdigital.co/" target="_blank" rel="noopener">Loblaw Digital</a></h3>
                   <p class="experience-role">Senior ML/AI Engineer</p>
@@ -240,7 +373,7 @@
           <div class="timeline-item">
             <article class="experience-card">
               <div class="experience-header">
-                <img src="/assets/img/priceline.webp" alt="Priceline" class="company-logo" width="56" height="56" />
+                <img src="assets/img/priceline.webp" alt="Priceline" class="company-logo" width="56" height="56" />
                 <div class="experience-meta">
                   <h3><a href="https://priceline.com/" target="_blank" rel="noopener">Priceline</a> <span class="experience-affiliation">(Booking Holdings)</span></h3>
                   <p class="experience-role">Machine Learning Engineer</p>
@@ -261,7 +394,7 @@
           <div class="timeline-item">
             <article class="experience-card">
               <div class="experience-header">
-                <img src="/assets/img/logo-altaml.svg" alt="AltaML" class="company-logo company-logo--altaml" width="56" height="56" />
+                <img src="assets/img/logo-altaml.svg" alt="AltaML" class="company-logo company-logo--altaml" width="56" height="56" />
                 <div class="experience-meta">
                   <h3><a href="https://altaml.com/" target="_blank" rel="noopener">AltaML</a></h3>
                   <p class="experience-role">Data Scientist (Contract)</p>
@@ -280,7 +413,7 @@
           <div class="timeline-item">
             <article class="experience-card">
               <div class="experience-header">
-                <img src="/assets/img/Chatbot_Blue.png" alt="MIRA Chatbot" class="company-logo" width="56" height="56" />
+                <img src="assets/img/Chatbot_Blue.png" alt="MIRA Chatbot" class="company-logo" width="56" height="56" />
                 <div class="experience-meta">
                   <h3>
                     <a href="https://mymira.ca/" target="_blank" rel="noopener">MIRA Chatbot</a>
@@ -458,6 +591,11 @@
               </div>
               <h3>Spotify Music Recommender</h3>
               <p>Machine learning project leveraging the Spotify dataset to build a personalized music recommendation system — exploring content-based filtering, clustering, and deep learning to recommend tracks tailored to user preferences.</p>
+              <div class="project-links">
+                <a href="https://github.com/zamaniali1995/spotify-music-recommender" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
             </div>
           </article>
 
@@ -542,7 +680,6 @@
               <span class="skill-pill">SQL</span>
               <span class="skill-pill">PostgreSQL</span>
               <span class="skill-pill">MySQL</span>
-              <span class="skill-pill">BigQuery</span>
             </div>
           </div>
 
@@ -643,6 +780,7 @@
             <h3>Developing and Implementing a Mental Health Chatbot to Support Healthcare Workers</h3>
             <p class="publication-authors">A. Zamani, M. Gharayat, J. Nobel, O. Zaiane, E. Stroulia</p>
             <p class="publication-venue">REMAP-D · Vancouver, British Columbia, Canada</p>
+            <a class="publication-link" href="https://www.mymira.ca/publications.html" target="_blank" rel="noopener">View MIRA research →</a>
           </article>
 
           <article class="publication-card fade-in">
@@ -651,6 +789,7 @@
             <p class="publication-authors">A. Zamani, B. Bakhshi, S. Sharifian</p>
             <p class="publication-venue">Computers &amp; Electrical Engineering, 90, 106890</p>
             <a class="publication-link" href="https://doi.org/10.1016/j.compeleceng.2020.106890" target="_blank" rel="noopener">View paper →</a>
+            <a class="publication-link" href="https://github.com/zamaniali1995/load-balancing-4-SFC-Mapping" target="_blank" rel="noopener">View code →</a>
           </article>
 
           <article class="publication-card fade-in">
@@ -658,6 +797,8 @@
             <h3>A Novel Approach for Service Function Chain (SFC) Mapping with Multiple SFC Instances in a Fog-to-Cloud Computing System</h3>
             <p class="publication-authors">A. Zamani, S. Sharifian</p>
             <p class="publication-venue">4th International Conference on Signal Processing and Intelligent Systems (ICSPIS)</p>
+            <a class="publication-link" href="https://doi.org/10.1109/icspis.2018.8700535" target="_blank" rel="noopener">View paper →</a>
+            <a class="publication-link" href="https://github.com/zamaniali1995/A-Novel-Approach-for-Service-Function-Chain-SFC-Mapping-with-Multiple-SFC-instances-paper" target="_blank" rel="noopener">View code →</a>
           </article>
 
         </div>
@@ -689,6 +830,16 @@
             <span>GitHub</span>
             <strong>github.com/zamaniali1995</strong>
           </a>
+          <a href="https://scholar.google.com/citations?user=cFk5cpEAAAAJ" target="_blank" rel="noopener" class="contact-card fade-in">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Google Scholar</span>
+            <strong>scholar.google.com</strong>
+          </a>
+          <a href="https://orcid.org/0000-0001-7320-0976" target="_blank" rel="noopener" class="contact-card fade-in">
+            <i class="fab fa-orcid"></i>
+            <span>ORCID</span>
+            <strong>0000-0001-7320-0976</strong>
+          </a>
           <a href="https://zamaniali1995.github.io" target="_blank" rel="noopener" class="contact-card fade-in">
             <i class="fas fa-globe"></i>
             <span>Website</span>
@@ -706,8 +857,8 @@
     </div>
   </footer>
 
-  <script src="/assets/vendor/typed.js/typed.min.js"></script>
-  <script src="/assets/js/main.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
