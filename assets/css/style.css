@@ -474,9 +474,57 @@ ul {
   inset: 10%;
   border-radius: 50%;
   background: var(--gradient);
-  opacity: 0.12;
-  filter: blur(40px);
+  opacity: 0.14;
+  filter: blur(44px);
   z-index: 0;
+  animation: agentic-wrap-glow 5s ease-in-out infinite;
+}
+
+.hero-diagram-meta {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.hero-diagram-caption {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.hero-diagram-scenario {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(26, 34, 52, 0.6);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.scenario-label {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.scenario-step {
+  color: var(--accent);
+  font-weight: 600;
+  min-width: 11ch;
+  text-align: left;
+  transition: color 0.3s ease, opacity 0.35s ease, transform 0.35s ease;
+}
+
+.scenario-step.is-changing {
+  opacity: 0;
+  transform: translateY(4px);
 }
 
 .agentic-diagram {
@@ -487,44 +535,138 @@ ul {
   display: block;
 }
 
-.hero-diagram-caption {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  margin-top: 16px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+/* Entrance: hidden until viewport triggers */
+.hero-diagram-wrap .agentic-node {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.hero-diagram-wrap .agentic-flow--draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.hero-diagram-wrap .agentic-particle,
+.hero-diagram-wrap .agentic-orbit,
+.hero-diagram-wrap .agentic-ambient,
+.hero-diagram-wrap .agentic-planner-ring {
+  opacity: 0;
+}
+
+.hero-diagram-wrap:not(.is-active) .agentic-flow {
+  animation: none;
+}
+
+.hero-diagram-wrap.is-active .agentic-node--query,
+.hero-diagram-wrap.is-active .agentic-node--retrieval,
+.hero-diagram-wrap.is-active .agentic-node--action,
+.hero-diagram-wrap.is-active .agentic-node--memory,
+.hero-diagram-wrap.is-active .agentic-node--guard,
+.hero-diagram-wrap.is-active .agentic-node--tools {
+  animation: agentic-node-reveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+             agentic-node-float 4.5s ease-in-out infinite 0.6s;
+}
+
+.hero-diagram-wrap.is-active .agentic-node--planner {
+  animation: agentic-node-reveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+             agentic-planner-pulse 3s ease-in-out infinite 0.6s;
+}
+
+.hero-diagram-wrap.is-active .agentic-node--query { animation-delay: 0.1s, 0.6s; }
+.hero-diagram-wrap.is-active .agentic-node--planner { animation-delay: 0.25s, 0.6s; }
+.hero-diagram-wrap.is-active .agentic-node--retrieval { animation-delay: 0.4s, 0.6s; }
+.hero-diagram-wrap.is-active .agentic-node--action { animation-delay: 0.5s, 0.6s; }
+.hero-diagram-wrap.is-active .agentic-node--memory { animation-delay: 0.6s, 0.6s; }
+.hero-diagram-wrap.is-active .agentic-node--guard { animation-delay: 0.7s, 0.6s; }
+.hero-diagram-wrap.is-active .agentic-node--tools { animation-delay: 0.8s, 0.6s; }
+
+.hero-diagram-wrap.is-active .agentic-flow--draw {
+  animation: agentic-path-draw 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+             agentic-flow-dash 2.2s linear infinite 1.2s;
+}
+
+.hero-diagram-wrap.is-active .agentic-flow--0 { animation-delay: 0s, 1.2s; }
+.hero-diagram-wrap.is-active .agentic-flow--1 { animation-delay: 0.08s, 1.28s; }
+.hero-diagram-wrap.is-active .agentic-flow--2 { animation-delay: 0.16s, 1.36s; }
+.hero-diagram-wrap.is-active .agentic-flow--3 { animation-delay: 0.24s, 1.44s; }
+.hero-diagram-wrap.is-active .agentic-flow--4 { animation-delay: 0.32s, 1.52s; }
+.hero-diagram-wrap.is-active .agentic-flow--5 { animation-delay: 0.4s, 1.6s; }
+
+.hero-diagram-wrap.is-active .agentic-orbit,
+.hero-diagram-wrap.is-active .agentic-ambient,
+.hero-diagram-wrap.is-active .agentic-planner-ring,
+.hero-diagram-wrap.is-active .agentic-particle {
+  opacity: 1;
+  transition: opacity 0.6s ease 0.9s;
+}
+
+.hero-diagram-wrap.is-active .agentic-node.is-active rect:first-of-type,
+.hero-diagram-wrap.is-active .agentic-node.is-active > circle:first-of-type {
+  stroke: #fff;
+  filter: url(#ag-glow);
+}
+
+.hero-diagram-wrap.is-active .agentic-node--planner.is-active .agentic-planner-ring {
+  opacity: 1;
+  stroke-width: 3;
 }
 
 /* Agentic diagram animations */
+.agentic-ambient {
+  transform-origin: 200px 210px;
+  animation: agentic-ambient-pulse 4s ease-in-out infinite;
+}
+
 .agentic-orbit {
-  transform-origin: 200px 200px;
-  animation: agentic-orbit-spin 30s linear infinite;
+  transform-origin: 200px 210px;
+}
+
+.agentic-orbit--outer {
+  animation: agentic-orbit-spin 36s linear infinite;
+}
+
+.agentic-orbit--inner {
+  animation: agentic-orbit-spin-reverse 24s linear infinite;
 }
 
 .agentic-flow {
-  stroke-dasharray: 6 10;
-  animation: agentic-flow-dash 2s linear infinite;
+  stroke-dasharray: 8 10;
+  animation: agentic-flow-dash 2.2s linear infinite;
 }
 
-.agentic-flow--2 { animation-delay: 0.4s; }
-.agentic-flow--3 { animation-delay: 0.8s; }
-.agentic-flow--4 { animation-delay: 1.2s; }
-.agentic-flow--5 { animation-delay: 1.6s; }
+.agentic-flow--return {
+  stroke-dasharray: 4 14;
+  animation: agentic-flow-dash-reverse 2.8s linear infinite;
+}
+
+.agentic-flow--2 { animation-delay: 0.35s; }
+.agentic-flow--3 { animation-delay: 0.7s; }
+.agentic-flow--4 { animation-delay: 1.05s; }
+.agentic-flow--5 { animation-delay: 1.4s; }
+.agentic-flow--r0 { animation-delay: 0.5s; }
+.agentic-flow--r1 { animation-delay: 1.1s; }
+.agentic-flow--r2 { animation-delay: 1.45s; }
+.agentic-flow--r5 { animation-delay: 0.9s; }
+
+.agentic-planner-ring {
+  transform-origin: 200px 210px;
+  animation: agentic-planner-ring 3s ease-in-out infinite;
+}
 
 .agentic-node--planner {
-  transform-origin: 200px 200px;
-  animation: agentic-planner-pulse 3s ease-in-out infinite;
+  transform-origin: 200px 210px;
 }
 
 .agentic-node--agent {
   transform-box: fill-box;
   transform-origin: center;
-  animation: agentic-node-float 4s ease-in-out infinite;
 }
+
+.agentic-node--retrieval { animation-delay: 0s; }
+.agentic-node--action { animation-delay: 0.4s; }
+.agentic-node--memory { animation-delay: 0.8s; }
+.agentic-node--guard { animation-delay: 1.2s; }
+.agentic-node--tools { animation-delay: 1.6s; }
 
 .agentic-node--delay-1 { animation-delay: 0.5s; }
 .agentic-node--delay-2 { animation-delay: 1s; }
@@ -536,22 +678,34 @@ ul {
 }
 
 .agentic-pulse-dot--delay-1 { animation-delay: 0.6s; }
+.agentic-pulse-dot--delay-2 { animation-delay: 1.2s; }
+.agentic-pulse-dot--delay-3 { animation-delay: 1.8s; }
 
 .agentic-particle {
-  transform-box: fill-box;
-  transform-origin: center;
+  opacity: 0;
 }
 
-.agentic-particle--1 {
-  animation: agentic-particle-1 3s ease-in-out infinite;
+.hero-diagram-wrap.is-active .agentic-particle {
+  opacity: 1;
 }
 
-.agentic-particle--2 {
-  animation: agentic-particle-2 3.5s ease-in-out infinite 0.5s;
+@keyframes agentic-wrap-glow {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.18; transform: scale(1.04); }
 }
 
-.agentic-particle--3 {
-  animation: agentic-particle-3 4s ease-in-out infinite 1s;
+@keyframes agentic-node-reveal {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes agentic-path-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes agentic-ambient-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
 }
 
 @keyframes agentic-orbit-spin {
@@ -559,44 +713,37 @@ ul {
   to { transform: rotate(360deg); }
 }
 
+@keyframes agentic-orbit-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
 @keyframes agentic-flow-dash {
-  to { stroke-dashoffset: -32; }
+  to { stroke-dashoffset: -36; }
+}
+
+@keyframes agentic-flow-dash-reverse {
+  to { stroke-dashoffset: 36; }
+}
+
+@keyframes agentic-planner-ring {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
 }
 
 @keyframes agentic-planner-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.88; }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.03); }
 }
 
 @keyframes agentic-node-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+  50% { transform: translateY(-4px); }
 }
 
 @keyframes agentic-dot-pulse {
-  0%, 100% { opacity: 0.5; }
+  0%, 100% { opacity: 0.45; }
   50% { opacity: 1; }
-}
-
-@keyframes agentic-particle-1 {
-  0% { transform: translate(200px, 155px); opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { transform: translate(120px, 95px); opacity: 0; }
-}
-
-@keyframes agentic-particle-2 {
-  0% { transform: translate(200px, 155px); opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { transform: translate(280px, 95px); opacity: 0; }
-}
-
-@keyframes agentic-particle-3 {
-  0% { transform: translate(200px, 245px); opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { transform: translate(200px, 320px); opacity: 0; }
 }
 
 .hero-stats {
@@ -1047,6 +1194,22 @@ ul {
   background: var(--bg-secondary);
 }
 
+.project-image--animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(56, 189, 248, 0.06) 50%, transparent 60%);
+  transform: translateX(-100%);
+  animation: project-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes project-shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
 .project-image img {
   display: block;
   width: 100%;
@@ -1058,7 +1221,7 @@ ul {
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .project-image::after {
@@ -1491,14 +1654,40 @@ ul {
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
+  .hero-diagram-wrap .agentic-node {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero-diagram-wrap .agentic-flow--draw {
+    stroke-dashoffset: 0 !important;
+  }
+  .hero-diagram-wrap .agentic-particle,
+  .hero-diagram-wrap .agentic-orbit,
+  .hero-diagram-wrap .agentic-ambient,
+  .hero-diagram-wrap .agentic-planner-ring {
+    opacity: 1 !important;
+  }
+  .project-image--animated::before {
+    animation: none !important;
+    display: none;
+  }
+  .agentic-ambient,
   .agentic-orbit,
+  .agentic-planner-ring,
   .agentic-flow,
   .agentic-node--planner,
   .agentic-node--agent,
   .agentic-pulse-dot,
+  .agentic-particle--0,
   .agentic-particle--1,
   .agentic-particle--2,
-  .agentic-particle--3 {
+  .agentic-particle--3,
+  .agentic-particle--4,
+  .agentic-particle--5,
+  .agentic-particle--r0,
+  .agentic-particle--r1,
+  .agentic-particle--r2,
+  .agentic-particle--r5 {
     animation: none !important;
   }
 }

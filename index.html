@@ -178,16 +178,34 @@
             </div>
           </div>
           <div class="hero-visual">
-            <div class="hero-diagram-wrap">
-              <svg class="agentic-diagram" viewBox="0 0 400 400" role="img" aria-label="Planner-based agentic AI architecture diagram">
+            <div class="hero-diagram-wrap" id="agentic-diagram">
+              <svg class="agentic-diagram" viewBox="0 0 400 430" role="img" aria-label="Planner-based agentic AI architecture diagram">
                 <defs>
                   <linearGradient id="ag-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="#38bdf8"/>
                     <stop offset="50%" stop-color="#818cf8"/>
                     <stop offset="100%" stop-color="#c084fc"/>
                   </linearGradient>
-                  <filter id="ag-glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <radialGradient id="ag-hub-glow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+                    <stop offset="70%" stop-color="#818cf8" stop-opacity="0.08"/>
+                    <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+                  </radialGradient>
+                  <marker id="ag-arrow-cyan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                    <polygon points="0 0, 7 3.5, 0 7" fill="#38bdf8"/>
+                  </marker>
+                  <marker id="ag-arrow-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                    <polygon points="0 0, 7 3.5, 0 7" fill="#c084fc"/>
+                  </marker>
+                  <filter id="ag-glow" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur stdDeviation="6" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                  <filter id="ag-soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
                     <feMerge>
                       <feMergeNode in="blur"/>
                       <feMergeNode in="SourceGraphic"/>
@@ -195,72 +213,143 @@
                   </filter>
                 </defs>
 
-                <!-- Orbit ring -->
-                <circle class="agentic-orbit" cx="200" cy="200" r="148" fill="none" stroke="url(#ag-gradient)" stroke-width="1" opacity="0.2"/>
+                <!-- Ambient hub glow -->
+                <circle class="agentic-ambient" cx="200" cy="210" r="110" fill="url(#ag-hub-glow)"/>
 
-                <!-- Flow paths -->
-                <path class="agentic-flow agentic-flow--1" d="M200 155 L120 95" fill="none" stroke="#38bdf8" stroke-width="2"/>
-                <path class="agentic-flow agentic-flow--2" d="M200 155 L280 95" fill="none" stroke="#818cf8" stroke-width="2"/>
-                <path class="agentic-flow agentic-flow--3" d="M200 245 L95 280" fill="none" stroke="#a78bfa" stroke-width="2"/>
-                <path class="agentic-flow agentic-flow--4" d="M200 245 L305 280" fill="none" stroke="#c084fc" stroke-width="2"/>
-                <path class="agentic-flow agentic-flow--5" d="M200 245 L200 320" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                <!-- Orbit rings -->
+                <circle class="agentic-orbit agentic-orbit--outer" cx="200" cy="210" r="155" fill="none" stroke="url(#ag-gradient)" stroke-width="1" opacity="0.18"/>
+                <circle class="agentic-orbit agentic-orbit--inner" cx="200" cy="210" r="128" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.12" stroke-dasharray="4 12"/>
 
-                <!-- Planner (center) -->
-                <g class="agentic-node agentic-node--planner" filter="url(#ag-glow)">
-                  <circle cx="200" cy="200" r="42" fill="url(#ag-gradient)"/>
-                  <text x="200" y="197" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800">PLANNER</text>
-                  <text x="200" y="212" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" opacity="0.8">Orchestrator</text>
+                <!-- Curved flow paths (outbound) -->
+                <path class="agentic-flow agentic-flow--draw agentic-flow--0" pathLength="1" d="M200 42 Q200 95 200 168" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.9" marker-end="url(#ag-arrow-cyan)"/>
+                <path class="agentic-flow agentic-flow--draw agentic-flow--1" pathLength="1" d="M178 192 Q140 145 120 95" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.85" marker-end="url(#ag-arrow-cyan)"/>
+                <path class="agentic-flow agentic-flow--draw agentic-flow--2" pathLength="1" d="M222 192 Q260 145 280 95" fill="none" stroke="#818cf8" stroke-width="2" opacity="0.85" marker-end="url(#ag-arrow-cyan)"/>
+                <path class="agentic-flow agentic-flow--draw agentic-flow--3" pathLength="1" d="M178 228 Q120 255 95 280" fill="none" stroke="#a78bfa" stroke-width="2" opacity="0.85" marker-end="url(#ag-arrow-purple)"/>
+                <path class="agentic-flow agentic-flow--draw agentic-flow--4" pathLength="1" d="M222 228 Q280 255 305 280" fill="none" stroke="#c084fc" stroke-width="2" opacity="0.85" marker-end="url(#ag-arrow-purple)"/>
+                <path class="agentic-flow agentic-flow--draw agentic-flow--5" pathLength="1" d="M200 252 Q200 290 200 328" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.85" marker-end="url(#ag-arrow-cyan)"/>
+
+                <!-- Return flow paths -->
+                <path class="agentic-flow agentic-flow--return agentic-flow--r1" pathLength="1" d="M120 95 Q150 140 178 192" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.35"/>
+                <path class="agentic-flow agentic-flow--return agentic-flow--r2" pathLength="1" d="M280 95 Q250 140 222 192" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.35"/>
+                <path class="agentic-flow agentic-flow--return agentic-flow--r5" pathLength="1" d="M200 328 Q200 290 200 252" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.35"/>
+                <path class="agentic-flow agentic-flow--return agentic-flow--r0" pathLength="1" d="M200 168 Q200 105 200 42" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.4"/>
+
+                <!-- User Query gateway -->
+                <g class="agentic-node agentic-node--agent agentic-node--query" data-step="query">
+                  <rect x="148" y="10" width="104" height="32" rx="16" fill="#1a2234" stroke="#22d3ee" stroke-width="2" filter="url(#ag-soft-glow)"/>
+                  <circle cx="164" cy="26" r="4" fill="#22d3ee" class="agentic-pulse-dot"/>
+                  <text x="200" y="30" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">User Query</text>
                 </g>
 
-                <!-- Agent: Retrieval -->
-                <g class="agentic-node agentic-node--agent">
-                  <rect x="72" y="62" width="96" height="52" rx="12" fill="#1a2234" stroke="#38bdf8" stroke-width="2"/>
+                <!-- Planner hub -->
+                <g class="agentic-node agentic-node--planner" data-step="plan">
+                  <circle class="agentic-planner-ring" cx="200" cy="210" r="54" fill="none" stroke="url(#ag-gradient)" stroke-width="2" opacity="0.55"/>
+                  <circle cx="200" cy="210" r="44" fill="url(#ag-gradient)" filter="url(#ag-glow)"/>
+                  <circle cx="200" cy="210" r="30" fill="#0f172a" opacity="0.25"/>
+                  <text x="200" y="206" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="800">PLANNER</text>
+                  <text x="200" y="221" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="8" font-weight="600" opacity="0.85">Orchestrator</text>
+                </g>
+
+                <!-- Retrieval Agent -->
+                <g class="agentic-node agentic-node--agent agentic-node--retrieval" data-step="retrieve">
+                  <rect x="72" y="62" width="96" height="52" rx="12" fill="#1a2234" stroke="#38bdf8" stroke-width="2" filter="url(#ag-soft-glow)"/>
                   <circle cx="88" cy="82" r="5" fill="#38bdf8" class="agentic-pulse-dot"/>
                   <text x="120" y="86" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Retrieval</text>
-                  <text x="120" y="100" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Agent</text>
+                  <text x="120" y="100" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">RAG Agent</text>
                 </g>
 
-                <!-- Agent: Action -->
-                <g class="agentic-node agentic-node--agent agentic-node--delay-1">
-                  <rect x="232" y="62" width="96" height="52" rx="12" fill="#1a2234" stroke="#818cf8" stroke-width="2"/>
+                <!-- Specialized Agents -->
+                <g class="agentic-node agentic-node--agent agentic-node--action agentic-node--delay-1" data-step="act">
+                  <rect x="232" y="62" width="96" height="52" rx="12" fill="#1a2234" stroke="#818cf8" stroke-width="2" filter="url(#ag-soft-glow)"/>
                   <circle cx="248" cy="82" r="5" fill="#818cf8" class="agentic-pulse-dot agentic-pulse-dot--delay-1"/>
-                  <text x="280" y="86" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Action</text>
-                  <text x="280" y="100" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Agent</text>
+                  <text x="280" y="86" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Agents</text>
+                  <text x="280" y="100" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="7">Specialized Agents</text>
                 </g>
 
                 <!-- Memory -->
-                <g class="agentic-node agentic-node--agent agentic-node--delay-2">
-                  <rect x="42" y="258" width="106" height="52" rx="12" fill="#1a2234" stroke="#a78bfa" stroke-width="2"/>
+                <g class="agentic-node agentic-node--agent agentic-node--memory agentic-node--delay-2" data-step="memory">
+                  <rect x="42" y="258" width="106" height="52" rx="12" fill="#1a2234" stroke="#a78bfa" stroke-width="2" filter="url(#ag-soft-glow)"/>
+                  <circle cx="58" cy="278" r="4" fill="#a78bfa" class="agentic-pulse-dot agentic-pulse-dot--delay-2"/>
                   <text x="95" y="280" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Memory</text>
-                  <text x="95" y="296" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">LTM · STM · Episodic</text>
+                  <text x="95" y="296" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">LTM / STM / Episodic</text>
                 </g>
 
                 <!-- Guardrails -->
-                <g class="agentic-node agentic-node--agent agentic-node--delay-3">
-                  <rect x="252" y="258" width="106" height="52" rx="12" fill="#1a2234" stroke="#c084fc" stroke-width="2"/>
+                <g class="agentic-node agentic-node--agent agentic-node--guard agentic-node--delay-3" data-step="guard">
+                  <rect x="252" y="258" width="106" height="52" rx="12" fill="#1a2234" stroke="#c084fc" stroke-width="2" filter="url(#ag-soft-glow)"/>
+                  <circle cx="268" cy="278" r="4" fill="#c084fc" class="agentic-pulse-dot agentic-pulse-dot--delay-3"/>
                   <text x="305" y="280" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">Guardrails</text>
-                  <text x="305" y="296" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Pre · Post · Policy</text>
+                  <text x="305" y="296" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Pre / Post / Policy</text>
                 </g>
 
                 <!-- MCP Tools -->
-                <g class="agentic-node agentic-node--agent agentic-node--delay-4">
-                  <rect x="142" y="328" width="116" height="44" rx="12" fill="#1a2234" stroke="#38bdf8" stroke-width="2"/>
+                <g class="agentic-node agentic-node--agent agentic-node--tools agentic-node--delay-4" data-step="act">
+                  <rect x="142" y="328" width="116" height="44" rx="12" fill="#1a2234" stroke="#38bdf8" stroke-width="2" filter="url(#ag-soft-glow)"/>
                   <text x="200" y="348" text-anchor="middle" fill="#38bdf8" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700">MCP Tool Package</text>
                   <text x="200" y="362" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="8">Shared Agent Infrastructure</text>
                 </g>
 
-                <!-- Traveling particles -->
+                <!-- Outbound particles (SMIL motion along curved paths) -->
+                <g class="agentic-particle agentic-particle--0">
+                  <circle r="3.5" fill="#22d3ee"/>
+                  <animateMotion class="agentic-motion" dur="2.6s" repeatCount="indefinite" path="M200 42 Q200 95 200 168" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2.6s" repeatCount="indefinite" begin="indefinite"/>
+                </g>
                 <g class="agentic-particle agentic-particle--1">
                   <circle r="4" fill="#38bdf8"/>
+                  <animateMotion class="agentic-motion" dur="2.8s" repeatCount="indefinite" path="M178 192 Q140 145 120 95" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2.8s" repeatCount="indefinite" begin="indefinite"/>
                 </g>
                 <g class="agentic-particle agentic-particle--2">
                   <circle r="4" fill="#818cf8"/>
+                  <animateMotion class="agentic-motion" dur="3s" repeatCount="indefinite" path="M222 192 Q260 145 280 95" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3s" repeatCount="indefinite" begin="indefinite"/>
                 </g>
                 <g class="agentic-particle agentic-particle--3">
-                  <circle r="3" fill="#a78bfa"/>
+                  <circle r="3.5" fill="#a78bfa"/>
+                  <animateMotion class="agentic-motion" dur="3.2s" repeatCount="indefinite" path="M178 228 Q120 255 95 280" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.2s" repeatCount="indefinite" begin="indefinite"/>
+                </g>
+                <g class="agentic-particle agentic-particle--4">
+                  <circle r="3.5" fill="#c084fc"/>
+                  <animateMotion class="agentic-motion" dur="3.1s" repeatCount="indefinite" path="M222 228 Q280 255 305 280" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.1s" repeatCount="indefinite" begin="indefinite"/>
+                </g>
+                <g class="agentic-particle agentic-particle--5">
+                  <circle r="4" fill="#38bdf8"/>
+                  <animateMotion class="agentic-motion" dur="2.9s" repeatCount="indefinite" path="M200 252 Q200 290 200 328" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2.9s" repeatCount="indefinite" begin="indefinite"/>
+                </g>
+
+                <!-- Return particles -->
+                <g class="agentic-particle agentic-particle--r0">
+                  <circle r="3" fill="#22d3ee" opacity="0.8"/>
+                  <animateMotion class="agentic-motion" dur="3.2s" repeatCount="indefinite" path="M200 168 Q200 105 200 42" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.15;0.85;1" dur="3.2s" repeatCount="indefinite" begin="indefinite"/>
+                </g>
+                <g class="agentic-particle agentic-particle--r1">
+                  <circle r="3" fill="#38bdf8" opacity="0.7"/>
+                  <animateMotion class="agentic-motion" dur="3.4s" repeatCount="indefinite" path="M120 95 Q150 140 178 192" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="3.4s" repeatCount="indefinite" begin="indefinite"/>
+                </g>
+                <g class="agentic-particle agentic-particle--r2">
+                  <circle r="3" fill="#818cf8" opacity="0.7"/>
+                  <animateMotion class="agentic-motion" dur="3.5s" repeatCount="indefinite" path="M280 95 Q250 140 222 192" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="3.5s" repeatCount="indefinite" begin="indefinite"/>
+                </g>
+                <g class="agentic-particle agentic-particle--r5">
+                  <circle r="3" fill="#22d3ee" opacity="0.7"/>
+                  <animateMotion class="agentic-motion" dur="3.3s" repeatCount="indefinite" path="M200 328 Q200 290 200 252" begin="indefinite"/>
+                  <animate class="agentic-motion" attributeName="opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="3.3s" repeatCount="indefinite" begin="indefinite"/>
                 </g>
               </svg>
-              <p class="hero-diagram-caption">Planner-based Agentic Architecture</p>
+              <div class="hero-diagram-meta">
+                <p class="hero-diagram-caption">Planner-based Agentic Architecture</p>
+                <p class="hero-diagram-scenario" aria-live="polite">
+                  <span class="scenario-label">Flow</span>
+                  <span class="scenario-step">User Query</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -465,7 +554,7 @@
         <div class="projects-grid">
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/agent-tools-package.svg" alt="Agent Tools Package" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -480,7 +569,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/production-rag.svg" alt="Production RAG System" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -494,7 +583,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/agentic-platform.svg" alt="Agentic Platform Architecture" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -513,8 +602,8 @@
         <div class="projects-grid">
 
           <article class="project-card">
-            <div class="project-image">
-              <img src="assets/img/Chatbot_Blue.png" alt="MIRA Mental Health Chatbot" loading="lazy" width="800" height="450" />
+            <div class="project-image project-image--animated">
+              <img src="assets/img/projects/mira-chatbot.svg" alt="MIRA Mental Health Chatbot" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -536,7 +625,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/neighborhood-recommendation.svg" alt="Neighborhood Recommendation System" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -550,7 +639,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/travel-chatbot.svg" alt="Travel Assistance Chatbot" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -564,7 +653,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/ml-pipeline.svg" alt="ML Pipeline Template" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -583,7 +672,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/burnout-detection.svg" alt="Burnout Detection" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -598,7 +687,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/hotel-forecasting.svg" alt="Hotel Revenue Forecasting" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -612,7 +701,7 @@
           </article>
 
           <article class="project-card">
-            <div class="project-image">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/spotify-recommender.svg" alt="Spotify Music Recommender" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
