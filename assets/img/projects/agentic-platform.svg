@@ -9,21 +9,50 @@
       <stop offset="100%" stop-color="#c084fc"/>
     </linearGradient>
   </defs>
+  <style>
+    @keyframes ap-hub { 0%,100%{transform:scale(1);opacity:.85} 50%{transform:scale(1.06);opacity:1} }
+    @keyframes ap-orbit { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes ap-node { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+    @keyframes ap-flow { to { stroke-dashoffset: -20; } }
+    .ap-hub { transform-origin:400px 210px; animation:ap-hub 2.8s ease-in-out infinite; }
+    .ap-orbit { transform-origin:400px 210px; animation:ap-orbit 28s linear infinite; }
+    .ap-n1 { transform-origin:250px 130px; animation:ap-node 3.2s ease-in-out infinite; }
+    .ap-n2 { transform-origin:550px 130px; animation:ap-node 3.2s ease-in-out infinite .4s; }
+    .ap-n3 { transform-origin:250px 300px; animation:ap-node 3.2s ease-in-out infinite .8s; }
+    .ap-n4 { transform-origin:550px 300px; animation:ap-node 3.2s ease-in-out infinite 1.2s; }
+    .ap-flow { stroke-dasharray:5 5; animation:ap-flow 1.8s linear infinite; }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
   <rect width="800" height="450" fill="url(#bg3)"/>
-  <circle cx="400" cy="210" r="45" fill="url(#accent3)" opacity="0.85"/>
-  <text x="400" y="218" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">PLAN</text>
-  <circle cx="250" cy="130" r="34" fill="#1a2234" stroke="#818cf8" stroke-width="2"/>
-  <circle cx="550" cy="130" r="34" fill="#1a2234" stroke="#c084fc" stroke-width="2"/>
-  <circle cx="250" cy="300" r="34" fill="#1a2234" stroke="#38bdf8" stroke-width="2"/>
-  <circle cx="550" cy="300" r="34" fill="#1a2234" stroke="#a78bfa" stroke-width="2"/>
-  <line x1="280" y1="155" x2="365" y2="185" stroke="#475569" stroke-width="2"/>
-  <line x1="520" y1="155" x2="435" y2="185" stroke="#475569" stroke-width="2"/>
-  <line x1="280" y1="275" x2="365" y2="235" stroke="#475569" stroke-width="2"/>
-  <line x1="520" y1="275" x2="435" y2="235" stroke="#475569" stroke-width="2"/>
-  <text x="250" y="135" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Agent</text>
-  <text x="550" y="135" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Agent</text>
-  <text x="250" y="305" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Memory</text>
-  <text x="550" y="305" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Guard</text>
+  <circle class="ap-orbit" cx="400" cy="210" r="120" fill="none" stroke="url(#accent3)" stroke-width="1" opacity="0.2"/>
+  <g class="ap-hub">
+    <circle cx="400" cy="210" r="45" fill="url(#accent3)" opacity="0.85"/>
+    <text x="400" y="218" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">PLAN</text>
+  </g>
+  <g class="ap-n1">
+    <circle cx="250" cy="130" r="34" fill="#1a2234" stroke="#818cf8" stroke-width="2"/>
+    <text x="250" y="135" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Agent</text>
+  </g>
+  <g class="ap-n2">
+    <circle cx="550" cy="130" r="34" fill="#1a2234" stroke="#c084fc" stroke-width="2"/>
+    <text x="550" y="135" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Agent</text>
+  </g>
+  <g class="ap-n3">
+    <circle cx="250" cy="300" r="34" fill="#1a2234" stroke="#38bdf8" stroke-width="2"/>
+    <text x="250" y="305" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Memory</text>
+  </g>
+  <g class="ap-n4">
+    <circle cx="550" cy="300" r="34" fill="#1a2234" stroke="#a78bfa" stroke-width="2"/>
+    <text x="550" y="305" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Inter, Arial, sans-serif">Guard</text>
+  </g>
+  <line class="ap-flow" x1="280" y1="155" x2="365" y2="185" stroke="#475569" stroke-width="2"/>
+  <line class="ap-flow" x1="520" y1="155" x2="435" y2="185" stroke="#475569" stroke-width="2" style="animation-delay:.3s"/>
+  <line class="ap-flow" x1="280" y1="275" x2="365" y2="235" stroke="#475569" stroke-width="2" style="animation-delay:.6s"/>
+  <line class="ap-flow" x1="520" y1="275" x2="435" y2="235" stroke="#475569" stroke-width="2" style="animation-delay:.9s"/>
+  <circle r="4" fill="#818cf8">
+    <animateMotion dur="2.5s" repeatCount="indefinite" path="M280 155 L365 185"/>
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
   <text x="400" y="380" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Agentic Architecture</text>
   <text x="400" y="410" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="15">Planner / Agents / Memory / Guardrails</text>
 </svg>
