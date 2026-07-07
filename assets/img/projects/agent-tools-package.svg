@@ -9,21 +9,39 @@
       <stop offset="100%" stop-color="#818cf8"/>
     </linearGradient>
   </defs>
+  <style>
+    @keyframes agt-flow { to { stroke-dashoffset: -28; } }
+    @keyframes agt-pulse { 0%,100%{opacity:.55;transform:scale(1)} 50%{opacity:1;transform:scale(1.08)} }
+    @keyframes agt-hub { 0%,100%{opacity:.2} 50%{opacity:.45} }
+    @keyframes agt-dot { 0%{offset-distance:0%;opacity:0} 10%,90%{opacity:1} 100%{offset-distance:100%;opacity:0} }
+    .agt-flow { stroke-dasharray:8 6; animation:agt-flow 1.6s linear infinite; }
+    .agt-mod1 { transform-origin:195px 185px; animation:agt-pulse 2.4s ease-in-out infinite; }
+    .agt-mod2 { transform-origin:365px 185px; animation:agt-pulse 2.4s ease-in-out infinite .4s; }
+    .agt-mod3 { transform-origin:535px 185px; animation:agt-pulse 2.4s ease-in-out infinite .8s; }
+    .agt-hub { animation:agt-hub 3s ease-in-out infinite; }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
   <rect width="800" height="450" fill="url(#bg1)"/>
   <circle cx="650" cy="80" r="120" fill="#38bdf8" opacity="0.08"/>
   <circle cx="100" cy="380" r="90" fill="#818cf8" opacity="0.1"/>
   <rect x="120" y="110" width="560" height="230" rx="20" fill="#1a2234" stroke="url(#accent1)" stroke-width="2"/>
-  <rect x="160" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#38bdf8" stroke-width="1.5" opacity="0.9"/>
-  <rect x="330" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
-  <rect x="500" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#c084fc" stroke-width="1.5" opacity="0.9"/>
-  <circle cx="195" cy="175" r="8" fill="#38bdf8"/>
-  <circle cx="365" cy="175" r="8" fill="#818cf8"/>
-  <circle cx="535" cy="175" r="8" fill="#c084fc"/>
-  <rect x="195" y="195" width="70" height="8" rx="4" fill="#475569"/>
-  <rect x="365" y="195" width="70" height="8" rx="4" fill="#475569"/>
-  <rect x="535" y="195" width="70" height="8" rx="4" fill="#475569"/>
-  <path d="M230 260 H570" stroke="#334155" stroke-width="2" stroke-dasharray="8 6"/>
-  <rect x="280" y="245" width="240" height="55" rx="14" fill="url(#accent1)" opacity="0.25"/>
+  <g class="agt-mod1">
+    <rect x="160" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#38bdf8" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="195" cy="175" r="8" fill="#38bdf8"/>
+    <rect x="195" y="195" width="70" height="8" rx="4" fill="#475569"/>
+  </g>
+  <g class="agt-mod2">
+    <rect x="330" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#818cf8" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="365" cy="175" r="8" fill="#818cf8"/>
+    <rect x="365" y="195" width="70" height="8" rx="4" fill="#475569"/>
+  </g>
+  <g class="agt-mod3">
+    <rect x="500" y="150" width="140" height="70" rx="12" fill="#243049" stroke="#c084fc" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="535" cy="175" r="8" fill="#c084fc"/>
+    <rect x="535" y="195" width="70" height="8" rx="4" fill="#475569"/>
+  </g>
+  <path class="agt-flow" d="M230 260 H570" stroke="#334155" stroke-width="2"/>
+  <rect class="agt-hub" x="280" y="245" width="240" height="55" rx="14" fill="url(#accent1)" opacity="0.25"/>
   <text x="400" y="280" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">MCP / Agent Tools</text>
   <text x="400" y="390" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="16">Shared Platform Infrastructure</text>
 </svg>

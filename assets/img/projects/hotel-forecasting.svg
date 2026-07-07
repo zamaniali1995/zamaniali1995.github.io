@@ -9,12 +9,21 @@
       <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
   </defs>
+  <style>
+    @keyframes htl-draw { from{stroke-dashoffset:520} to{stroke-dashoffset:0} }
+    @keyframes htl-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.35)} }
+    @keyframes htl-fill { 0%,100%{opacity:.1} 50%{opacity:.18} }
+    .htl-line { stroke-dasharray:520; stroke-dashoffset:520; animation:htl-draw 3s ease-in-out infinite alternate; }
+    .htl-dot { transform-origin:700px 100px; animation:htl-pulse 2s ease-in-out infinite; }
+    .htl-area { animation:htl-fill 3s ease-in-out infinite; }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
   <rect width="800" height="450" fill="url(#bg6)"/>
   <line x1="120" y1="300" x2="680" y2="300" stroke="#334155" stroke-width="2"/>
   <line x1="120" y1="120" x2="120" y2="300" stroke="#334155" stroke-width="2"/>
-  <polyline points="140,260 220,240 300,220 380,200 460,170 540,150 620,120 700,100" fill="none" stroke="url(#line6)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <polyline points="140,260 220,240 300,220 380,200 460,170 540,150 620,120 700,100 700,300 140,300" fill="#0ea5e9" opacity="0.12"/>
-  <circle cx="700" cy="100" r="8" fill="#22d3ee"/>
+  <polyline class="htl-area" points="140,260 220,240 300,220 380,200 460,170 540,150 620,120 700,100 700,300 140,300" fill="#0ea5e9" opacity="0.12"/>
+  <polyline class="htl-line" points="140,260 220,240 300,220 380,200 460,170 540,150 620,120 700,100" fill="none" stroke="url(#line6)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="htl-dot" cx="700" cy="100" r="8" fill="#22d3ee"/>
   <rect x="500" y="130" width="150" height="50" rx="10" fill="#1a2234" stroke="#0ea5e9" stroke-width="1.5"/>
   <text x="575" y="160" text-anchor="middle" fill="#22d3ee" font-size="14" font-weight="700" font-family="Inter, Arial, sans-serif">2024 Forecast</text>
   <text x="400" y="360" text-anchor="middle" fill="#e2e8f0" font-size="24" font-weight="700" font-family="Inter, Arial, sans-serif">Hotel Revenue Forecasting</text>

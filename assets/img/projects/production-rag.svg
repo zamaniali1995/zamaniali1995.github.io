@@ -9,20 +9,35 @@
       <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
   </defs>
+  <style>
+    @keyframes rag-flow { to { stroke-dashoffset: -24; } }
+    @keyframes rag-pulse { 0%,100%{opacity:.35;transform:scale(1)} 50%{opacity:.65;transform:scale(1.12)} }
+    @keyframes rag-glow { 0%,100%{opacity:.7} 50%{opacity:1} }
+    .rag-flow { stroke-dasharray:6 6; animation:rag-flow 1.4s linear infinite; }
+    .rag-core { transform-origin:400px 225px; animation:rag-pulse 2.2s ease-in-out infinite; }
+    .rag-hit { animation:rag-glow 2s ease-in-out infinite; }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
   <rect width="800" height="450" fill="url(#bg2)"/>
   <ellipse cx="400" cy="225" rx="280" ry="140" fill="#0ea5e9" opacity="0.06"/>
   <circle cx="180" cy="225" r="55" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
   <text x="180" y="232" text-anchor="middle" fill="#38bdf8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Query</text>
   <rect x="290" y="175" width="220" height="100" rx="16" fill="#1a2234" stroke="url(#accent2)" stroke-width="2"/>
   <path d="M320 210 H480 M320 235 H450 M320 260 H470" stroke="#475569" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="400" cy="225" r="18" fill="#0ea5e9" opacity="0.35"/>
-  <circle cx="620" cy="225" r="55" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
-  <text x="620" y="220" text-anchor="middle" fill="#22d3ee" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">97%</text>
-  <text x="620" y="242" text-anchor="middle" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="12">Hit Rate</text>
-  <path d="M235 225 H285" stroke="#38bdf8" stroke-width="3" marker-end="url(#none)"/>
-  <path d="M510 225 H565" stroke="#22d3ee" stroke-width="3"/>
+  <circle class="rag-core" cx="400" cy="225" r="18" fill="#0ea5e9" opacity="0.35"/>
+  <g class="rag-hit">
+    <circle cx="620" cy="225" r="55" fill="#1e293b" stroke="#22d3ee" stroke-width="2"/>
+    <text x="620" y="220" text-anchor="middle" fill="#22d3ee" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">97%</text>
+    <text x="620" y="242" text-anchor="middle" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="12">Hit Rate</text>
+  </g>
+  <path class="rag-flow" d="M235 225 H285" stroke="#38bdf8" stroke-width="3"/>
+  <path class="rag-flow" d="M510 225 H565" stroke="#22d3ee" stroke-width="3" style="animation-delay:.35s"/>
   <polygon points="565,225 555,220 555,230" fill="#22d3ee"/>
   <polygon points="285,225 275,220 275,230" fill="#38bdf8"/>
+  <circle r="5" fill="#38bdf8">
+    <animateMotion dur="2.2s" repeatCount="indefinite" path="M235 225 H565"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
   <text x="400" y="360" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Hybrid-Search RAG</text>
   <text x="400" y="390" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="15">Retrieval / Indexing / APIs</text>
 </svg>

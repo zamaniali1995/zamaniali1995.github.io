@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="MIRA Mental Health Chatbot">
+  <defs>
+    <linearGradient id="mira-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#132743"/>
+    </linearGradient>
+    <linearGradient id="mira-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <style>
+    @keyframes mira-pulse { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.05)} }
+    @keyframes mira-wave { 0%,100%{opacity:.45} 50%{opacity:.9} }
+    @keyframes mira-bubble { 0%,100%{opacity:.85} 50%{opacity:1} }
+    @keyframes mira-dot { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+    .mira-avatar { transform-origin:400px 175px; animation:mira-pulse 2.5s ease-in-out infinite; }
+    .mira-bubble { animation:mira-bubble 2.8s ease-in-out infinite; }
+    .mira-dot1 { animation:mira-dot 1.4s ease-in-out infinite; }
+    .mira-dot2 { animation:mira-dot 1.4s ease-in-out infinite .2s; }
+    .mira-dot3 { animation:mira-dot 1.4s ease-in-out infinite .4s; }
+    .mira-wave { animation:mira-wave 3s ease-in-out infinite; }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <rect width="800" height="450" fill="url(#mira-bg)"/>
+  <circle cx="680" cy="90" r="100" fill="#2563eb" opacity="0.1"/>
+  <circle cx="120" cy="360" r="80" fill="#38bdf8" opacity="0.08"/>
+  <rect x="160" y="70" width="480" height="280" rx="24" fill="#1a2234" stroke="url(#mira-blue)" stroke-width="2"/>
+  <g class="mira-avatar">
+    <circle cx="400" cy="175" r="42" fill="url(#mira-blue)" opacity="0.9"/>
+    <circle cx="388" cy="168" r="5" fill="#fff"/>
+    <circle cx="412" cy="168" r="5" fill="#fff"/>
+    <path d="M388 188 Q400 198 412 188" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g class="mira-bubble">
+    <rect x="220" y="235" width="360" height="52" rx="16" fill="#243049" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="240" y="268" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="15">How can I support your mental health today?</text>
+  </g>
+  <circle class="mira-dot1" cx="370" cy="320" r="5" fill="#38bdf8"/>
+  <circle class="mira-dot2" cx="400" cy="320" r="5" fill="#38bdf8"/>
+  <circle class="mira-dot3" cx="430" cy="320" r="5" fill="#38bdf8"/>
+  <path class="mira-wave" d="M220 310 Q250 290 280 310 T340 310 T400 310 T460 310 T520 310" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <text x="400" y="385" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">MIRA Chatbot</text>
+  <text x="400" y="415" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="15">NLP / Healthcare / Full Stack</text>
+</svg>

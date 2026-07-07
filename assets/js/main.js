@@ -99,4 +99,98 @@
         observer.observe(el);
       });
   }
+
+  // Agentic diagram: entrance animation + scenario step playback
+  const diagramWrap = document.getElementById('agentic-diagram');
+  const scenarioStepEl = document.querySelector('.scenario-step');
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  const scenarioSteps = [
+    { step: 'query', label: 'User Query' },
+    { step: 'plan', label: 'Planner Orchestration' },
+    { step: 'retrieve', label: 'RAG Retrieval' },
+    { step: 'act', label: 'Tool Execution' },
+    { step: 'memory', label: 'Memory Update' },
+    { step: 'guard', label: 'Guardrail Check' },
+    { step: 'respond', label: 'Response Delivered' },
+  ];
+
+  function highlightScenarioStep(stepKey) {
+    if (!diagramWrap) return;
+
+    diagramWrap.querySelectorAll('[data-step]').forEach(function (node) {
+      var nodeStep = node.getAttribute('data-step');
+      var isActive =
+        stepKey === 'respond'
+          ? node.classList.contains('agentic-node--query')
+          : nodeStep === stepKey;
+      node.classList.toggle('is-active', isActive);
+    });
+  }
+
+  function setScenarioLabel(label) {
+    if (!scenarioStepEl) return;
+    scenarioStepEl.classList.add('is-changing');
+    window.setTimeout(function () {
+      scenarioStepEl.textContent = label;
+      scenarioStepEl.classList.remove('is-changing');
+    }, 180);
+  }
+
+  function startParticleMotion() {
+    if (!diagramWrap) return;
+    diagramWrap.querySelectorAll('.agentic-motion').forEach(function (motionEl) {
+      if (typeof motionEl.beginElement === 'function') {
+        motionEl.beginElement();
+      }
+    });
+  }
+
+  function activateDiagram() {
+    requestAnimationFrame(function () {
+      diagramWrap.classList.add('is-active');
+      startParticleMotion();
+      runScenarioPlayback();
+    });
+  }
+  function runScenarioPlayback() {
+    var index = 0;
+
+    function advance() {
+      var current = scenarioSteps[index];
+      highlightScenarioStep(current.step);
+      setScenarioLabel(current.label);
+      index = (index + 1) % scenarioSteps.length;
+    }
+
+    advance();
+    return window.setInterval(advance, 2400);
+  }
+
+  if (diagramWrap) {
+    if (prefersReducedMotion) {
+      diagramWrap.classList.add('is-active');
+      highlightScenarioStep('plan');
+      if (scenarioStepEl) {
+        scenarioStepEl.textContent = 'Planner Orchestration';
+      }
+    } else if ('IntersectionObserver' in window) {
+      var diagramObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              diagramObserver.unobserve(entry.target);
+              activateDiagram();
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: '0px 0px -20px 0px' }
+      );
+      diagramObserver.observe(diagramWrap);
+    } else {
+      activateDiagram();
+    }
+  }
 })();

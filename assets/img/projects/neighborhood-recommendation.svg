@@ -5,16 +5,34 @@
       <stop offset="100%" stop-color="#132743"/>
     </linearGradient>
   </defs>
+  <style>
+    @keyframes nbr-flow { to { stroke-dashoffset: -22; } }
+    @keyframes nbr-pin { 0%,100%{transform:scale(1);opacity:.2} 50%{transform:scale(1.15);opacity:.35} }
+    @keyframes nbr-match { 0%,100%{opacity:.8} 50%{opacity:1;transform:scale(1.04)} }
+    .nbr-flow { stroke-dasharray:6 5; animation:nbr-flow 1.8s linear infinite; }
+    .nbr-p1 { transform-origin:200px 180px; animation:nbr-pin 2.2s ease-in-out infinite; }
+    .nbr-p2 { transform-origin:350px 140px; animation:nbr-pin 2.2s ease-in-out infinite .3s; }
+    .nbr-p3 { transform-origin:520px 190px; animation:nbr-pin 2.2s ease-in-out infinite .6s; }
+    .nbr-p4 { transform-origin:620px 130px; animation:nbr-pin 2.2s ease-in-out infinite .9s; }
+    .nbr-card { transform-origin:400px 295px; animation:nbr-match 2.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
   <rect width="800" height="450" fill="url(#bg4)"/>
   <path d="M0 320 Q200 280 400 300 T800 290 V450 H0 Z" fill="#1e3a5f" opacity="0.5"/>
-  <circle cx="200" cy="180" r="40" fill="#4285f4" opacity="0.25"/>
-  <circle cx="350" cy="140" r="55" fill="#34a853" opacity="0.2"/>
-  <circle cx="520" cy="190" r="45" fill="#fbbc04" opacity="0.22"/>
-  <circle cx="620" cy="130" r="35" fill="#ea4335" opacity="0.2"/>
-  <path d="M200 180 L350 140 L520 190 L620 130" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5" opacity="0.6"/>
-  <rect x="310" y="240" width="180" height="110" rx="16" fill="#1a2234" stroke="#4285f4" stroke-width="2"/>
-  <circle cx="400" cy="275" r="22" fill="#4285f4"/>
-  <path d="M392 285 L400 265 L408 285 Z" fill="#fff"/>
-  <text x="400" y="325" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="600" font-family="Inter, Arial, sans-serif">Neighborhood Match</text>
+  <circle class="nbr-p1" cx="200" cy="180" r="40" fill="#4285f4" opacity="0.25"/>
+  <circle class="nbr-p2" cx="350" cy="140" r="55" fill="#34a853" opacity="0.2"/>
+  <circle class="nbr-p3" cx="520" cy="190" r="45" fill="#fbbc04" opacity="0.22"/>
+  <circle class="nbr-p4" cx="620" cy="130" r="35" fill="#ea4335" opacity="0.2"/>
+  <path class="nbr-flow" d="M200 180 L350 140 L520 190 L620 130" stroke="#94a3b8" stroke-width="2" opacity="0.6"/>
+  <circle r="4" fill="#fbbc04">
+    <animateMotion dur="3s" repeatCount="indefinite" path="M200 180 L350 140 L520 190 L620 130"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <g class="nbr-card">
+    <rect x="310" y="240" width="180" height="110" rx="16" fill="#1a2234" stroke="#4285f4" stroke-width="2"/>
+    <circle cx="400" cy="275" r="22" fill="#4285f4"/>
+    <path d="M392 285 L400 265 L408 285 Z" fill="#fff"/>
+    <text x="400" y="325" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="600" font-family="Inter, Arial, sans-serif">Neighborhood Match</text>
+  </g>
   <text x="400" y="390" text-anchor="middle" fill="#fbbc04" font-size="14" font-weight="700" font-family="Inter, Arial, sans-serif">Google Hackathon - 1st Place</text>
 </svg>
