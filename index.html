@@ -603,6 +603,30 @@
 
           <article class="project-card">
             <div class="project-image project-image--animated">
+              <img src="assets/img/projects/plancontract.svg?v=2" alt="PlanContract" loading="lazy" width="800" height="450" />
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Multi-Agent</span>
+                <span class="project-tag">Pydantic</span>
+                <span class="project-tag">Open Source</span>
+              </div>
+              <h3>PlanContract</h3>
+              <p>Open-source library of framework-agnostic schemas and validators for multi-agent turn routing plans — typed Pydantic contracts between planner and dispatcher, with topology derivation, CI-ready validation, and a CLI. Available on PyPI.</p>
+              <div class="project-links">
+                <a href="https://github.com/zamaniali1995/plancontract" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+                <a href="https://pypi.org/project/plancontract/" target="_blank" rel="noopener">
+                  <i class="fas fa-cube"></i> PyPI
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image project-image--animated">
               <img src="assets/img/projects/mira-chatbot.svg" alt="MIRA Mental Health Chatbot" loading="lazy" width="800" height="450" />
             </div>
             <div class="project-body">
@@ -978,8 +1002,43 @@
     </div>
   </footer>
 
+  <!-- Agent Run — playable portfolio overlay -->
+  <div class="game-toggle-fixed" id="game-toggle-fixed">
+    <div class="game-toggle-row">
+      <button type="button" class="game-toggle-btn" id="game-toggle-btn" aria-pressed="false" title="Start Agent Run">
+        <span class="game-toggle-dot" aria-hidden="true"></span>
+        agent run
+      </button>
+      <button type="button" class="game-info-btn" id="game-info-btn" hidden aria-label="Mission briefing" title="Mission briefing">?</button>
+    </div>
+    <div class="robot-game-info" id="game-info-panel" hidden>
+      <p class="robot-game-info-title">mission briefing</p>
+      <div class="robot-game-info-row"><span class="robot-game-key">← →</span> route</div>
+      <div class="robot-game-info-row"><span class="robot-game-key">space</span> jump · double-jump</div>
+      <div class="robot-game-info-row"><span class="robot-game-key">shift</span> dash</div>
+      <p class="robot-game-info-goal">recover 5 plan tokens and finalize the routing graph</p>
+    </div>
+  </div>
+
+  <div class="cell-counter" id="cell-counter" hidden>
+    <span class="cell-counter-pip" aria-hidden="true"></span>
+    <span class="cell-counter-text" id="cell-counter-text">0 / 5 tokens</span>
+  </div>
+
+  <div class="agent-run-toast" id="agent-run-toast" hidden aria-live="polite"></div>
+
+  <canvas class="robot-game-canvas" id="robot-game-canvas" hidden aria-hidden="true"></canvas>
+
+  <div class="robot-game-status" id="game-status" hidden>
+    <p class="robot-game-status-title" id="game-status-title"></p>
+    <p class="robot-game-status-sub" id="game-status-sub"></p>
+    <button type="button" class="robot-game-status-btn" id="game-status-btn">rerun agent</button>
+    <p class="robot-game-status-hint" id="game-status-hint"></p>
+  </div>
+
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/agent-run.js"></script>
 </body>
 
 </html>
