@@ -26,16 +26,16 @@
   <meta property="og:description" content="Senior ML/AI Engineer architecting enterprise agentic AI, production RAG, and platform infrastructure at Loblaw Digital." />
   <meta property="og:url" content="https://zamaniali1995.github.io/" />
   <meta property="og:site_name" content="Ali Zamani Portfolio" />
-  <meta property="og:image" content="https://zamaniali1995.github.io/assets/img/og-image.svg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://zamaniali1995.github.io/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
   <meta property="og:image:alt" content="Ali Zamani — Senior ML/AI Engineer at Loblaw Digital" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@a1i_zmn_" />
   <meta name="twitter:title" content="Ali Zamani | Senior ML/AI Engineer" />
   <meta name="twitter:description" content="Senior ML/AI Engineer specializing in agentic AI, RAG systems, LangGraph, and production GenAI." />
-  <meta name="twitter:image" content="https://zamaniali1995.github.io/assets/img/og-image.svg" />
+  <meta name="twitter:image" content="https://zamaniali1995.github.io/assets/img/og-image.jpg" />
 
   <link rel="canonical" href="https://zamaniali1995.github.io/" />
 
@@ -88,6 +88,11 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
 
   <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob--cyan"></span>
+    <span class="blob blob--purple"></span>
+  </div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
   <!-- Navigation -->
   <header class="nav" role="banner">
@@ -164,20 +169,30 @@
             </div>
             <div class="hero-stats">
               <div class="stat-card">
-                <div class="stat-number">5+</div>
+                <div class="stat-number" data-count data-target="5" data-suffix="+">5+</div>
                 <div class="stat-label">Years Work Experience</div>
               </div>
               <div class="stat-card">
-                <div class="stat-number">97%</div>
+                <div class="stat-number" data-count data-target="97" data-suffix="%">97%</div>
                 <div class="stat-label">RAG Hit Rate</div>
               </div>
               <div class="stat-card">
-                <div class="stat-number">$10M+</div>
+                <div class="stat-number" data-count data-target="10" data-prefix="$" data-suffix="M+">$10M+</div>
                 <div class="stat-label">Client Savings</div>
               </div>
             </div>
           </div>
-          <div class="hero-visual">
+          <div class="hero-visual" id="hero-visual">
+            <div class="hero-3d" id="hero-3d" aria-hidden="true">
+              <div class="hero-3d-stage">
+                <canvas id="hero-3d-canvas"></canvas>
+                <div class="hero-3d-labels" id="hero-3d-labels"></div>
+              </div>
+              <div class="hero-diagram-meta">
+                <p class="hero-diagram-caption">Interactive Agentic Architecture</p>
+                <p class="hero-diagram-scenario"><span class="scenario-label">Drag</span><span class="scenario-step">to rotate the graph</span></p>
+              </div>
+            </div>
             <div class="hero-diagram-wrap" id="agentic-diagram">
               <svg class="agentic-diagram" viewBox="0 0 400 430" role="img" aria-label="Planner-based agentic AI architecture diagram">
                 <defs>
@@ -360,6 +375,28 @@
       </div>
     </section>
 
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Agentic AI</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">RAG</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">LangGraph</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">MCP</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">RLHF</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">Fine-Tuning</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">Vertex AI</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">LLMOps</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">Agentic AI</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">RAG</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">LangGraph</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">MCP</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">RLHF</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">Fine-Tuning</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">Vertex AI</span><span class="marquee-dot">◆</span>
+        <span class="marquee-item">LLMOps</span><span class="marquee-dot">◆</span>
+      </div>
+    </div>
+
     <!-- About -->
     <section id="about" class="section">
       <div class="container">
@@ -423,6 +460,19 @@
               </div>
             </div>
           </div>
+
+          <div class="about-demo fade-in about-highlights--wide">
+            <div class="about-demo-label"><span class="about-demo-dot"></span> Agent console — simulated demo</div>
+            <div class="device-mockup">
+              <div class="device-mockup-bar">
+                <span class="device-dot device-dot--red"></span>
+                <span class="device-dot device-dot--yellow"></span>
+                <span class="device-dot device-dot--green"></span>
+                <span class="device-mockup-title">agent-chat — production-rag.session</span>
+              </div>
+              <div class="device-mockup-body" id="demo-chat" aria-hidden="true"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -437,6 +487,7 @@
         </p>
 
         <div class="timeline">
+          <div class="timeline-progress-line" id="timeline-progress-line" aria-hidden="true"></div>
 
           <!-- Loblaw Digital -->
           <div class="timeline-item">
@@ -550,12 +601,43 @@
           Production systems from current role, hackathon wins, research chatbots, and open-source ML tooling.
         </p>
 
+        <div class="code-showcase fade-in">
+          <div class="about-demo-label"><span class="about-demo-dot"></span> Agent graph — production topology</div>
+          <div class="device-mockup">
+            <div class="device-mockup-bar">
+              <span class="device-dot device-dot--red"></span>
+              <span class="device-dot device-dot--yellow"></span>
+              <span class="device-dot device-dot--green"></span>
+              <span class="device-mockup-title">agent_graph.py</span>
+            </div>
+            <pre class="code-block"><code><span class="code-kw">from</span> langgraph.graph <span class="code-kw">import</span> StateGraph
+<span class="code-kw">from</span> agents <span class="code-kw">import</span> Planner, Retriever, Guardrails
+
+graph = <span class="code-fn">StateGraph</span>(AgentState)
+graph.<span class="code-fn">add_node</span>(<span class="code-str">"plan"</span>, <span class="code-fn">Planner</span>())
+graph.<span class="code-fn">add_node</span>(<span class="code-str">"retrieve"</span>, <span class="code-fn">Retriever</span>(top_k=<span class="code-num">8</span>, hybrid=<span class="code-kw">True</span>))
+graph.<span class="code-fn">add_node</span>(<span class="code-str">"guard"</span>, <span class="code-fn">Guardrails</span>(policy=<span class="code-str">"pre_post"</span>))
+
+graph.<span class="code-fn">add_edge</span>(<span class="code-str">"plan"</span>, <span class="code-str">"retrieve"</span>)
+graph.<span class="code-fn">add_edge</span>(<span class="code-str">"retrieve"</span>, <span class="code-str">"guard"</span>)
+
+app = graph.<span class="code-fn">compile</span>()
+result = app.<span class="code-fn">invoke</span>({<span class="code-str">"query"</span>: <span class="code-str">"Explain hybrid search"</span>})
+<span class="code-cm"># hit_rate: 0.97  precision: 0.78</span><span class="code-cursor"></span></code></pre>
+          </div>
+        </div>
+
         <h3 class="projects-group-title fade-in">Enterprise AI · Current Role</h3>
         <div class="projects-grid">
 
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/agent-tools-package.svg" alt="Agent Tools Package" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -571,6 +653,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/production-rag.svg" alt="Production RAG System" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -585,6 +672,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/agentic-platform.svg" alt="Agentic Platform Architecture" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -604,6 +696,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/plancontract.svg?v=2" alt="PlanContract" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -628,6 +725,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/mira-chatbot.svg" alt="MIRA Mental Health Chatbot" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -651,6 +753,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/neighborhood-recommendation.svg" alt="Neighborhood Recommendation System" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -665,6 +772,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/travel-chatbot.svg" alt="Travel Assistance Chatbot" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -679,6 +791,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/ml-pipeline.svg" alt="ML Pipeline Template" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -698,6 +815,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/burnout-detection.svg" alt="Burnout Detection" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -713,6 +835,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/hotel-forecasting.svg" alt="Hotel Revenue Forecasting" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -727,6 +854,11 @@
           <article class="project-card">
             <div class="project-image project-image--animated">
               <img src="assets/img/projects/spotify-recommender.svg" alt="Spotify Music Recommender" loading="lazy" width="800" height="450" />
+              <div class="project-shutters" aria-hidden="true">
+                <span class="project-shutter project-shutter--left"></span>
+                <span class="project-shutter project-shutter--right"></span>
+                <span class="project-open-hint"><i class="fas fa-arrows-left-right"></i> Open</span>
+              </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
@@ -750,6 +882,7 @@
 
     <!-- Skills -->
     <section id="skills" class="section">
+      <canvas class="skills-canvas" id="skills-canvas" aria-hidden="true"></canvas>
       <div class="container">
         <p class="section-label fade-in">Expertise</p>
         <h2 class="section-title fade-in">Skills & Technologies</h2>
@@ -774,6 +907,10 @@
             <div class="skill-pills">
               <span class="skill-pill">LLMs</span>
               <span class="skill-pill">Multimodal Models</span>
+              <span class="skill-pill">Fine-Tuning (LoRA/QLoRA)</span>
+              <span class="skill-pill">RLHF</span>
+              <span class="skill-pill">PEFT</span>
+              <span class="skill-pill">Instruction Tuning</span>
               <span class="skill-pill">LangChain</span>
               <span class="skill-pill">LangGraph</span>
               <span class="skill-pill">Prompt Engineering</span>
@@ -1036,8 +1173,12 @@
     <p class="robot-game-status-hint" id="game-status-hint"></p>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/hero-3d.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/skills-canvas.js"></script>
+  <script src="assets/js/agent-demo.js"></script>
   <script src="assets/js/agent-run.js"></script>
 </body>
 

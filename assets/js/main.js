@@ -80,6 +80,15 @@
     });
   });
 
+  // Stagger reveal delays for items grouped in the same grid/list
+  document
+    .querySelectorAll('.projects-grid, .skills-grid, .about-highlights, .publications-list, .education-grid, .contact-cards')
+    .forEach(function (group) {
+      Array.prototype.forEach.call(group.children, function (child, i) {
+        child.style.setProperty('--stagger', i % 6);
+      });
+    });
+
   // Intersection Observer for reveal animations
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
@@ -100,9 +109,138 @@
       });
   }
 
+  // Cursor-reactive ambient glow (desktop, fine-pointer only)
+  const cursorGlow = document.getElementById('cursor-glow');
+  const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (cursorGlow && hasFinePointer && !prefersReducedMotionQuery()) {
+    window.addEventListener(
+      'pointermove',
+      function (e) {
+        cursorGlow.style.setProperty('--cursor-x', e.clientX + 'px');
+        cursorGlow.style.setProperty('--cursor-y', e.clientY + 'px');
+        cursorGlow.classList.add('is-active');
+      },
+      { passive: true }
+    );
+  }
+
+  function prefersReducedMotionQuery() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  // Animated count-up for hero stats
+  document.querySelectorAll('[data-count]').forEach(function (el) {
+    const target = parseFloat(el.getAttribute('data-target'));
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+
+    if (isNaN(target) || prefersReducedMotionQuery() || !('IntersectionObserver' in window)) {
+      return;
+    }
+
+    function animateCount() {
+      const duration = 1400;
+      const start = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.round(target * eased) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    const countObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            countObserver.unobserve(entry.target);
+            animateCount();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    countObserver.observe(el);
+  });
+
+  // Scroll-linked progress line for the experience timeline
+  const timeline = document.querySelector('.timeline');
+  const timelineProgressLine = document.getElementById('timeline-progress-line');
+
+  if (timeline && timelineProgressLine) {
+    let timelineTicking = false;
+
+    function updateTimelineProgress() {
+      timelineTicking = false;
+      const rect = timeline.getBoundingClientRect();
+      const viewportAnchor = window.innerHeight * 0.75;
+      const progressPx = viewportAnchor - rect.top;
+      const pct = Math.max(0, Math.min(1, progressPx / rect.height));
+      timelineProgressLine.style.height = pct * 100 + '%';
+    }
+
+    function requestTimelineUpdate() {
+      if (!timelineTicking) {
+        timelineTicking = true;
+        requestAnimationFrame(updateTimelineProgress);
+      }
+    }
+
+    window.addEventListener('scroll', requestTimelineUpdate, { passive: true });
+    window.addEventListener('resize', requestTimelineUpdate);
+    requestTimelineUpdate();
+  }
+
+  // Tilt-on-hover for project cards (desktop, fine-pointer only)
+  if (hasFinePointer && !prefersReducedMotionQuery()) {
+    document.querySelectorAll('.project-card').forEach(function (card) {
+      function onMove(e) {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateX = (-py * 8).toFixed(2);
+        const rotateY = (px * 10).toFixed(2);
+        card.style.transform =
+          'translateY(-4px) perspective(700px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+      }
+
+      card.addEventListener('pointerenter', function () {
+        card.classList.add('is-tilting');
+      });
+      card.addEventListener('pointermove', onMove);
+      card.addEventListener('pointerleave', function () {
+        card.classList.remove('is-tilting');
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // Tap-to-open window shutters on touch devices (no hover to trigger them)
+  if (!hasFinePointer) {
+    document.querySelectorAll('.project-image').forEach(function (image) {
+      image.addEventListener('click', function () {
+        const card = image.closest('.project-card');
+        if (!card) return;
+        const wasOpen = card.classList.contains('is-open');
+        document.querySelectorAll('.project-card.is-open').forEach(function (openCard) {
+          openCard.classList.remove('is-open');
+        });
+        if (!wasOpen) {
+          card.classList.add('is-open');
+        }
+      });
+    });
+  }
+
   // Agentic diagram: entrance animation + scenario step playback
   const diagramWrap = document.getElementById('agentic-diagram');
-  const scenarioStepEl = document.querySelector('.scenario-step');
+  const scenarioStepEl = document.querySelector('#agentic-diagram .scenario-step');
   const prefersReducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)'
   ).matches;
