@@ -2083,6 +2083,22 @@ ul {
   color: var(--accent-dark);
 }
 
+.publications-more {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.publications-more a {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.publications-more a:hover {
+  color: var(--accent-dark);
+}
+
 /* ==========================================================================
    Project image placeholders
    ========================================================================== */
